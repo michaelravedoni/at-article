@@ -1,0 +1,34 @@
+at-block {
+  .at-article-block {
+    margin-bottom: 2em;
+    padding: 2em;
+    box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+
+    p:last-child, ul:last-child {
+      margin-bottom: 0;
+    }
+  }
+  /* Title */
+  .at-article-block-title {
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 1em;
+  }
+  /* Type */
+  .at-article-block-info {
+    background-color: #d6eaff;
+  }
+  .at-article-block-example {
+    background-color: #fff9c4;
+  }
+  .at-article-block-warning {
+    background-color: #ffdcd6;
+  }
+
+  /* Caption */
+  .at-article-block-caption {
+    display: inline-block;
+    font-weight: 600;
+    padding-bottom: .5em;
+  }
+}

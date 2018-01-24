@@ -1,0 +1,62 @@
+$color_font_sidenote: #606060;
+$color_bg_sidenote: #D5DBDB;
+$size_font_sidenote: 0.867rem;
+
+at-note {
+  /* Type */
+  .at-note-default, .at-note-margin, .at-note-foot {
+    display:none;
+  }
+  a.at-note-number {
+    text-decoration: none;
+    background: none;
+  }
+  /* Toggle */
+  input.at-note-toggle {
+    display: none;
+  }
+  label.at-note-toggle {
+    display: none;
+  }
+  label.at-note-toggle.at-note-number {
+    display: inline;
+  }
+  /* Breakpoints */
+  @media screen and (min-width: 1200px) {
+    .at-note-default, .at-note-margin {
+      display: block;
+      float: right;
+      clear: right;
+      margin-right: -60%;
+      width: 50%;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.3;
+      vertical-align: baseline;
+      position: relative;
+
+      color: $color_font_sidenote;
+      font-size: $size_font_sidenote;
+      line-height: 1.267em;
+    }
+  }
+  @media (max-width: 1200px) {
+    label.at-note-toggle {
+      display: inline;
+      cursor: pointer;
+    }
+    .at-note-toggle:checked + .at-note-default, .at-note-toggle:checked + .at-note-margin {
+      display: block;
+      float: left;
+      //left: 1rem;
+      clear: both;
+      width: 95%;
+      margin: 0.5rem 0.5rem;
+      padding: 0.7rem 1rem;
+      vertical-align: baseline;
+      position: relative;
+      background-color: $color_bg_sidenote;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "at-article",
+  "version": "0.0.1",
+  "description": "Web components and layout for blog and academic articles",
+  "author": "Michael Ravedoni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelravedoni/at-article/issues"
+  },
+  "homepage": "https://github.com/michaelravedoni/at-article",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michaelravedoni/at-article.git"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "serve": "stencil-dev-server",
+    "start": "npm run dev",
+    "test": "jest --no-cache",
+    "test.watch": "jest --watch --no-cache",
+    "release": "release-it"
+  },
+  "dependencies": {
+    "@stencil/core": "next",
+    "@stencil/router": "latest",
+    "tippy.js": "^2.0.8"
+  },
+  "devDependencies": {
+    "@stencil/dev-server": "latest",
+    "@stencil/utils": "latest",
+    "@types/jest": "^21.1.10",
+    "jest": "^21.2.1",
+    "release-it": "^6.0.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx"
+    ]
+  },
+  "main": "dist/at-article.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "browser": "dist/at-article.js"
+}

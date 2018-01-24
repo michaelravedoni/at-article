@@ -1,0 +1,28 @@
+at-figure {
+
+  figure {
+    margin:auto;
+  }
+  .at-figure-fullwidth {
+    width: 100vw;
+    position: relative;
+	  left: 50%;
+	  right: 50%;
+	  margin-left: -50vw;
+	  margin-right: -50vw;
+  }
+  .at-figure-no-fullwidth {
+    width:100%;
+  }
+  .at-figure-caption {
+    text-align: left;
+    color:grey;
+    margin: .5rem 0 1rem 0;
+  }
+  .at-figure-caption-numbering {}
+  .at-figure-caption-title {
+    font-weight: 600;
+  }
+  .at-figure-caption-text {font-size: 85%}
+  .at-figure-caption-doi, .at-figure-caption-credit {}
+}

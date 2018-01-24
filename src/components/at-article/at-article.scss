@@ -1,0 +1,67 @@
+at-article {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-color: #666;
+  line-height: 1.618;
+
+  article {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /**
+  * Paragraph
+  **/
+
+  p {
+    margin:0;
+    margin-bottom: 2em;
+  }
+
+  /* Note + Block */
+  @media (min-width: 1200px) {
+    .at-article-block .at-note {
+      left: 2.5rem;
+    }
+  }
+
+  /* Counter */
+  counter-reset: block-example block-info block-warning at-figure at-note;
+
+  /* Block: counter */
+  .at-article-block-example .at-article-block-caption-number::before {
+    counter-increment: block-example;
+    content: " " counter(block-example);
+  }
+  .at-article-block-info .at-article-block-caption-number::before {
+    counter-increment: block-info;
+    content: " " counter(block-info);
+  }
+  .at-article-block-warning .at-article-block-caption-number::before {
+    counter-increment: block-warning;
+    content: " " counter(block-warning);
+  }
+  /* Figure: counter */
+  .at-figure-caption-numbering::after {
+    counter-increment: at-figure;
+    content: " " counter(at-figure) ".";
+  }
+  /* Notes: counter */
+  .at-note-number::after {
+    counter-increment: at-note;
+    content: "" counter(at-note, lower-roman) "";
+    position: relative;
+    vertical-align: baseline;
+    font-size: 85%;
+    top: -0.3rem;
+    left: 0rem;
+  }
+  .at-note-default::before {
+    content: "" counter(at-note, lower-roman) " ";
+    position: relative;
+    vertical-align: baseline;
+    font-size: 85%;
+    top: -0.3rem;
+    left: 0rem;
+  }
+}

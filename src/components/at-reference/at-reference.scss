@@ -1,0 +1,69 @@
+at-reference {
+  p & {
+    .at-reference:before {
+      content:'';
+    }
+  }
+  /* Type */
+  .at-reference-default {
+    display:inline;
+  }
+  .at-reference-bibliography {
+    font-size: inherit;
+  }
+  .at-reference-bibliography a {
+    text-decoration: none;
+  }
+  /* Fields */
+  .at-reference-language {
+    font-weight: bold;
+    font-size: small;
+  }
+  /* Cite */
+  .at-reference-cite {
+    position: relative;
+    vertical-align: baseline;
+    font-size: 85%;
+    top: -0.3rem;
+    left: 0rem;
+  }
+  .at-reference-cite a {
+    text-decoration: none;
+    background: none;
+  }
+  /* Links */
+  .at-reference-links::before {
+    content: " ";
+  }
+  /*.at-reference-links span::after {
+    content: " • ";
+  }
+  .at-reference-links span:last-child::after {
+    display: none;
+  }*/
+  .at-reference-read-online, .at-reference-gs {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #26a69a;
+    border-radius: 3px;
+    min-width: 2rem;
+    padding: 0 6px;
+    margin-left: 3px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .at-reference-read-online a, .at-reference-gs a {
+    color: #ffffff;
+  }
+}
+
+/* Tippy */
+.tippy-tooltip.at-theme {
+  background-color: #fff;
+  border: 2px solid black;
+}
+.tippy-tooltip.at-theme .tippy-content at-reference {
+  font-size: 1rem;
+  color: #222;
+}
