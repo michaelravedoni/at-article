@@ -272,39 +272,6 @@ declare global {
 
 
 import {
-  AtSummary as AtSummary
-} from './components/at-recapitulation/at-summary';
-
-declare global {
-  interface HTMLAtSummaryElement extends AtSummary, HTMLElement {
-  }
-  var HTMLAtSummaryElement: {
-    prototype: HTMLAtSummaryElement;
-    new (): HTMLAtSummaryElement;
-  };
-  interface HTMLElementTagNameMap {
-    "at-summary": HTMLAtSummaryElement;
-  }
-  interface ElementTagNameMap {
-    "at-summary": HTMLAtSummaryElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "at-summary": JSXElements.AtSummaryAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface AtSummaryAttributes extends HTMLAttributes {
-      caption?: boolean;
-      captionHeading?: string;
-      heading?: string;
-      type?: string;
-    }
-  }
-}
-
-
-import {
   AtReference as AtReference
 } from './components/at-reference/at-reference';
 
@@ -413,6 +380,39 @@ declare global {
   }
   namespace JSXElements {
     export interface AtResumeAttributes extends HTMLAttributes {
+      caption?: boolean;
+      captionHeading?: string;
+      heading?: string;
+      type?: string;
+    }
+  }
+}
+
+
+import {
+  AtSummary as AtSummary
+} from './components/at-summary/at-summary';
+
+declare global {
+  interface HTMLAtSummaryElement extends AtSummary, HTMLElement {
+  }
+  var HTMLAtSummaryElement: {
+    prototype: HTMLAtSummaryElement;
+    new (): HTMLAtSummaryElement;
+  };
+  interface HTMLElementTagNameMap {
+    "at-summary": HTMLAtSummaryElement;
+  }
+  interface ElementTagNameMap {
+    "at-summary": HTMLAtSummaryElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "at-summary": JSXElements.AtSummaryAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AtSummaryAttributes extends HTMLAttributes {
       caption?: boolean;
       captionHeading?: string;
       heading?: string;

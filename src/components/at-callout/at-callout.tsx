@@ -8,7 +8,7 @@ export class AtCallout {
 
   // Indicate that name should be a public property on the component
   @Prop() heading: string;
-  @Prop() type: string = 'inline'; // default, inline, block
+  @Prop() type: string = 'inline'; // inline, block
 
   @State() cHeading: string;
 

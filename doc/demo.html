@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo HEG</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+	<meta name="theme-color" content="#16161d">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<script src="https://unpkg.com/at-article@0.0.1/dist/at-article.js"></script>
+
+	<link rel="apple-touch-icon" href="/assets/icon/icon.png">
+	<link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+	<link rel="manifest" href="/manifest.json">
+	
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
+</head>
+<body>
+	<at-article>
+    <at-article-content>
+	<h1>Demo HEG pour la création de composants web pour un article académique</h1>
+	<p class="uk-text-lead">Bonjour M. Boder, comme je suis absent voici cette demo pour vous montrer à quoi cela peut ressembler, voici un exemple de ce que j'ai commencé à faire. Vous trouverai en fin de document le code utilisé.</p>
+	<p>Il reste les références, les images, les citations et bien d'autres éléments à faire. Il faudr également faire la documentation, une gestion du workflow et le mettre à disposition sur Github.</p>
+	<h2>Exemple</h2>
+	<p>Haec igitur Epicuri non probo, inquam<at-note>First simple note cum haec taliaque sollicitas eius aures everberarent expositas semper eius modi rumoribus et patentes, varia animo tum miscente consilia, tandem id ut optimum factu elegit: et Vrsicinum primum ad se venire summo cum honore mandavit ea.</at-note>. De cetero vellem equidem aut ipse doctrinis fuisset instructior est enim, quod tibi ita videri necesse est, non satis politus iis artibus, quas qui tenent <at-callout>Voir <a href="http://example.com">Texte vers un lien</a> pour plus d'information</at-callout>, eruditi appellantur aut ne deterruisset alios a studiis. quamquam te quidem video<at-note>Second simple note eruditi appellantur aut ne <a href="https://example.com">deterruisset</a> alios a studiis.</at-note> minime esse deterritum.</p>
+	<at-callout type="block">Voir <a href="http://example.com">Texte vers un lien</a> pour plus d'information</at-callout>
+	<at-block heading="Si eum fuissemus" type="info" caption="true"><p>Cyprum itidem insulam procul a continenti discretam et portuosam inter municipia crebra urbes duae faciunt claram Salamis et Paphus, altera Iovis delubris altera Veneris templo insignis. tanta autem tamque multiplici fertilitate abundat rerum omnium eadem funeribus nemo deinde ad has stationes appulit navem, sed ut Scironis praerupta letalia declinantes litoribus Cypriis contigui navigabant, quae Isauriae scopulis sunt controversa.</p></at-block>
+	<at-block type="example" caption="true">Cyprum itidem insulam procul a continenti discretam et portuosam inter municipia…</at-block>
+	<at-block type="example" caption="true">Cyprum itidem insulam procul a continenti discretam et portuosam inter municipia…</at-block>
+	<at-notes></at-notes>
+	
+	<hr /><hr />
+	<h2>Code</h2>
+	<p>Ci-dessous, le code des composants web utilisé dans l'exemple ci-dessus.</p>
+	<h3>at-note</h3>
+	<p>Une note de marge. Elle peut aussi être uniquement "inline". Selon la largeur de l'écran, la note devient exculsivement "inline". Réduisez lalargeur de l'écran pour le constater. Lorsque une note est rajoutée, elle est automatiquement répértoriée en fin de document. Voir la section "Notes" pour le constater.</p>
+	<pre><code>&#x3C;at-note&#x3E;…&#x3C;/at-note&#x3E;</code></pre>
+	<pre><code>&#x3C;at-note type=&#x22;inline&#x22;&#x3E;&#x2026;&#x3C;/at-note&#x3E;</code></pre>
+	<h3>at-callout</h3>
+	<p>Un encadré "inline" ou "block" pour un renvoi vers une resource extérieure.</p>
+	<pre><code>&#x3C;at-callout&#x3E;…&#x3C;/at-callout&#x3E;</code></pre>
+	<pre><code>&#x3C;at-callout type=&#x22;block&#x22;&#x3E;&#x2026;&#x3C;/at-callout&#x3E;</code></pre>
+	<h3>at-block</h3>
+	<p>Pour une mise en avant d'un contenu. Celui-ci peut-être de type info, exemple ou default. La numérotation est automatique.</p>
+	<pre><code>&#x3C;at-block heading=&#x22;Si eum fuissemus&#x22; type=&#x22;info&#x22; caption=&#x22;true&#x22;&#x3E;…&#x3C;/at-block&#x3E;</code></pre>
+	<pre><code>&#x3C;at-block type=&#x22;example&#x22; caption=&#x22;true&#x22;&#x3E;…&#x3C;/at-block&#x3E;</code></pre>
+	
+	<h2>Code Typescript pour le composant at-block</h2>
+	<pre><code>
+import { Component, Prop, State } from '@stencil/core';
+
+@Component({
+  tag: 'at-block',
+  styleUrl: 'at-block.scss'
+})
+export class AtBlock {
+
+  // Indicate that name should be a public property on the component
+  @Prop() caption: boolean;
+  @Prop() captionHeading: string;
+  @Prop() heading: string;
+  @Prop() type: string = 'default'; // default, info, example, warning
+
+  @State() cHeading: string;
+
+  render() {
+    if (this.type == 'info') {this.cHeading = 'Info';}
+    else if (this.type == 'example') {this.cHeading = 'Example';}
+    else if (this.type == 'warning') {this.cHeading = 'Warning';}
+
+    return (
+      <div class={'at-article-block at-article-block-'+this.type}>
+
+      {this.caption ? (<div class="at-article-block-caption">{this.cHeading}<span class="at-article-block-caption-number"></span></div>) : (null)}
+      {this.heading ? (<div class="at-article-block-title">{this.heading}</div>) : (null)}
+      <slot></slot>
+      </div>
+    );
+  }
+}
+
+	</code></pre>
+	
+	</at-article-content>
+	</at-article>
+</body>
+</html>
