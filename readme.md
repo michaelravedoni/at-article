@@ -4,9 +4,17 @@
 
 `at-article` is a Web Component collection using [Stencil](https://github.com/ionic-team/stencil) for writing blogs and academics web articles.
 
-![](header.png)
-
 ## Features
+
+- 12 web-components for web native article writing
+- usable in any web environment
+- clean and flat design
+
+Demo :
+
+- [demo page](https://michaelravedoni.github.io/at-article/)
+- [academic article](https://michaelravedoni.github.io/at-article/demo-academic.html)
+- [blog article](https://michaelravedoni.github.io/at-article/demo-blog.html)
 
 ## Install
 
@@ -28,11 +36,6 @@ Use one of this solution to "install" the `at-article` component in your project
 - Then you can use the element anywhere in your template, JSX, html, etc.
 
 ## Usage
-
-Demo :
-
-- [academic article](https://ravedoni.com/go/atarticledemoacademic)
-- [blog article](https://ravedoni.com/go/atarticledemoblog)
 
 ### at-article
 This tag is the article container and indicates its scope.
@@ -261,6 +264,13 @@ We’re really happy to accept contributions from the community, that’s the ma
 5. Create a new Pull Request
 
 ## Release History
+
+## v0.0.2
+* Hosted documentation
+* es5 polyfill
+
+## v0.0.1
+* Initial release
 
 ## Roadmap
 
