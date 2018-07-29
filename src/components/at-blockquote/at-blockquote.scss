@@ -11,7 +11,12 @@ at-blockquote {
   blockquote::after {
     content: close-quote;
   }
-
+  figure {
+    margin-bottom: 18px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 18px;
+  }
   blockquote + figcaption {
     text-align: right;
     margin-right: 0;

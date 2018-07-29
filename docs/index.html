@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>at-article</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+
+	<script src="dist-test/at-article.js"></script>
+	<script src='https://ravedoni.com/test/at-article/dist/at-article.js'></script>
+</head>
+<body>
+	<h1>at-article</h1>
+	<p>Description coming soon. You can see the <a href="https://ravedoni.com/go/atarticledemoacademic">academic</a> and <a href="https://ravedoni.com/go/atarticledemoblog">blog</a> article demo.</p>
+	<p>Below you will find all the components of at-article as well as their declinations.</p>
+	<at-article>
+    	<at-article-content>
+			<h2>at-block</h2>
+			<at-block caption="true" heading="Default block heading">Default block content</at-block>
+			<at-block caption="true" heading="Info block heading" type="info">Info block content</at-block>
+			<at-block caption="true" heading="Second Info block heading" type="info">Second Info block content</at-block>
+			<at-block caption="true" heading="Warning block heading" type="warning">Warning block content</at-block>
+			<at-block caption="true" heading="Example block heading" type="example">Example block content</at-block>
+			<at-block>No caption, no heading block</at-block>
+			
+			<h2>at-blockquote</h2>
+			<at-blockquote>Simple blockquote</at-blockquote>
+			<at-blockquote author="Bruce Willis" source="Book sources">Simple blockquote with author and source.</at-blockquote>
+			<at-blockquote type="locator" locator="53" locatorPrefix="p. ">Simple blockquote with a locator.</at-blockquote>
+			
+			<h2>at-callout</h2>
+			Lorem ispum text <at-callout type="inline">Inline callout content with a <a href="http://example.com">link</a>.</at-callout> lorem ispum text.
+			<at-callout type="block">Block callout content</at-callout>
+			
+			<h2>at-figure</h2>
+			<at-figure src="https://picsum.photos/1500/300?image=1076" href="https://example.com" title="Figure block" caption="Figure block with link, doi, credit, numbering and content" doi="10.1007/s00223-003-0070-0" credit="Credit content. Sed laeditur hic coetuum magnificus splendor levitate paucorum incondita, ubi nati sunt non reputantium." numbering="true">Figure content. Sed laeditur hic coetuum magnificus splendor levitate paucorum incondita, ubi nati sunt non reputantium.</at-figure>
+			<at-figure src="https://picsum.photos/1500/300?image=1076" href="https://example.com" fullwidth="true" title="Fullwidth figure block" caption="Fullwidth figure block without link, doi, credit and content" numbering="true"></at-figure>
+			<at-figure src="https://picsum.photos/1500/300?image=1076"link,  title="Figure block" caption="Figure block without doi, credit, numbering and content"></at-figure>
+			
+			<h2>at-note</h2>
+			<p>Lorem ispum text<at-note>Default note.</at-note> lorem ispum text and another text anymore<at-note>Another default note</at-note> lorem ispum text and another text anymore<at-note type="margin">Margin note with a <a href="https://example.com">link</a> without numbering.</at-note> lorem ispum text and another text anymore and another text anymore<at-note type="margin">Foot note.</at-note>. Try resizing the window and see also the footnotes section.</p>
+			
+			<h2>at-notes</h2>
+			<at-notes></at-notes>
+			<at-notes heading="Noten (custom heading)"></at-notes>
+			
+			<h2>at-reference</h2>
+			<p>Lorem ispum text<at-reference key="aa2012" title="Biological concepts" creator="Albert Auguste" itemType="journalArticle" date="2012" publisher="Nature" pages="138-143" volume="4" issue="2" language="en" issn="2334-1984" pmid="2345" doi="10.1007/s00223-003-0070-0"></at-reference> lorem ispum text and another text anymore<at-reference key="key" title="Paris, ville de la mode" creator="Jean Dubois" itemType="webpage" date="2012" publisher="Le Monde" place="Paris"></at-reference> lorem ispum text and another text anymore <at-reference type="a-d" title="Physics" creator="Albert Henri Einstein" date="2015" publisher="Point" urll="https://example.com"></at-reference>.</p>
+			<p>Inline reference : <at-reference type="inline" title="Paris, ville de la mode" creator="Jean Dubois" itemType="webpage" date="2012" publisher="Le Monde" place="Paris"></at-reference></p>
+			
+			
+			<h2>at-references</h2>
+			<at-references></at-references>
+			<at-references heading="Referenz (custom heading)"></at-references>
+			
+			<h2>at-summary</h2>
+			<at-summary>Summary block content. Lorem ispum at nunc si ad aliquem bene nummatum tumentemque ideo honestus advena salutatum introieris, primitus tamquam exoptatus suscipieris et interrogatus multa coactusque mentiri, miraberis numquam antea visus summatem virum tenuem te sic enixius observantem, ut paeniteat ob haec bona tamquam praecipua non vidisse ante decennium Romam.
+			</at-summary>
+		</at-article-content>
+	</at-article>
+</body>
+</html>

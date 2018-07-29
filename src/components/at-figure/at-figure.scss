@@ -5,6 +5,7 @@ at-figure {
   }
   .at-figure-fullwidth {
     width: 100vw;
+    max-width: none;
     position: relative;
 	  left: 50%;
 	  right: 50%;
