@@ -1,7 +1,7 @@
 exports.config = {
-  bundles: [
-    { components: ['at-article', 'at-block', 'at-blockquote', 'at-figure', 'at-note', 'at-notes', 'at-reference', 'at-references'] }
-  ],
+  /*bundles: [
+    { components: [''] }
+  ],*/
   collections: [
     { name: '@stencil/router' }
   ],

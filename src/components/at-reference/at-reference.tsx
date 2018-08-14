@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 import tippy from 'tippy.js';
 
 @Component({
@@ -33,15 +33,19 @@ export class AtReference {
   @Prop() callNumber: string;
   @Prop() dateAdded: string;
 
+  @State() cKey: string;
 
   componentDidLoad() {
 
   }
 
   render() {
+
+    if (this.title || this.date) {this.cKey = this.title.slice(0, 3).toLowerCase() + this.creator.slice(0, 3).toLowerCase() + this.date.slice(2, 4);}
+
     if(this.type == 'default'){
       return (
-        <span class="at-reference at-reference-default at-reference-is-referenced">
+        <span class="at-reference at-reference-default at-reference-is-referenced" data-at-ref-key={this.cKey}>
           <span class="at-reference-number"></span>
         </span>
       );

@@ -22,7 +22,7 @@ Use one of this solution to "install" the `at-article` component in your project
 
 ### Script tag
 
-- Put a script tag similar to this `<script src='https://unpkg.com/at-article@<version>/dist/at-article.js'></script>` in the head of your index.html
+- Put a script tag similar to this `<script src='https://unpkg.com/at-article@latest/dist/at-article.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html, etc.
 
 ### Node Modules
@@ -206,8 +206,15 @@ Property | Default | Explanations
 --- | --- | ---
 heading  | `References` |  Set the heading of the notes section.
 
-### at-summary
+### at-abstract
 This block is used to offer a shortened content of the article by using different words and sentences to help the reader quickly ascertain the article's purpose. It is usually inserted at the beginning of an article.
+
+```html
+<at-abstract>Lorem ispum</at-abstract>
+```
+
+### at-summary
+This block is used to offer a short conclusion of the article to help the reader quickly ascertain the article's purpose. It is usually inserted at the end of an article.
 
 ```html
 <at-summary>Lorem ispum</at-summary>
@@ -264,6 +271,9 @@ We’re really happy to accept contributions from the community, that’s the ma
 5. Create a new Pull Request
 
 ## Release History
+
+## v0.0.3
+* Components <at-abstract> and <at-summary> added
 
 ## v0.0.2
 * Hosted documentation

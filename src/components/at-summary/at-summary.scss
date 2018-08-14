@@ -1,3 +1,19 @@
 at-summary {
-  
+  .at-summary {
+    border-color: #666;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+
+    position: relative;
+    margin-bottom: 20px;
+    padding: 15px 29px 15px 15px;
+    background: #f8f8f8;
+    color: #666;
+  }
+  .at-summary-heading {
+    font-style: normal;
+    font-weight: bold;
+    font-variant: normal;
+    margin-bottom: 10px;
+  }
 }

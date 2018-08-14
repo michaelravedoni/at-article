@@ -7,21 +7,15 @@ import { Component, Prop, State } from '@stencil/core';
 export class AtSummary {
 
   // Indicate that name should be a public property on the component
-  @Prop() caption: boolean;
-  @Prop() captionHeading: string;
-  @Prop() heading: string;
-  @Prop() type: string = 'default'; // default, info, example, warning
-
-  @State() cHeading: string;
+  @Prop() type: string = 'default';
+  @Prop() heading: string = 'Summary';
 
   render() {
-    if (this.type == 'info') {this.cHeading = 'Info';}
-    else if (this.type == 'example') {this.cHeading = 'Example';}
-    else if (this.type == 'warning') {this.cHeading = 'Warning';}
 
     return (
       <div class={'at-summary at-summary-'+this.type}>
-      <slot></slot>
+        {this.heading ? (<div class="at-summary-heading">{this.heading}</div>) : (null)}
+        <slot></slot>
       </div>
     );
   }

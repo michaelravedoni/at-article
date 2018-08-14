@@ -8,6 +8,37 @@ import '@stencil/router';
 
 
 import {
+  AtAbstract as AtAbstract
+} from './components/at-abstract/at-abstract';
+
+declare global {
+  interface HTMLAtAbstractElement extends AtAbstract, HTMLElement {
+  }
+  var HTMLAtAbstractElement: {
+    prototype: HTMLAtAbstractElement;
+    new (): HTMLAtAbstractElement;
+  };
+  interface HTMLElementTagNameMap {
+    "at-abstract": HTMLAtAbstractElement;
+  }
+  interface ElementTagNameMap {
+    "at-abstract": HTMLAtAbstractElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "at-abstract": JSXElements.AtAbstractAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AtAbstractAttributes extends HTMLAttributes {
+      heading?: string;
+      type?: string;
+    }
+  }
+}
+
+
+import {
   AtArticleContent as AtArticleContent
 } from './components/at-article-content/at-article-content';
 
@@ -413,8 +444,6 @@ declare global {
   }
   namespace JSXElements {
     export interface AtSummaryAttributes extends HTMLAttributes {
-      caption?: boolean;
-      captionHeading?: string;
       heading?: string;
       type?: string;
     }
