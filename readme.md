@@ -14,7 +14,6 @@
 
 Demo :
 
-- [demo page](https://michaelravedoni.github.io/at-article/)
 - [academic article](https://michaelravedoni.github.io/at-article/demo-academic.html)
 - [blog article](https://michaelravedoni.github.io/at-article/demo-blog.html)
 
@@ -39,196 +38,22 @@ Use one of this solution to "install" the `at-article` component in your project
 
 ## Usage
 
-### at-article
-This tag is the article container and indicates its scope.
+Check the documentation for more informations : [Documentation](https://michaelravedoni.github.io/documentation)
 
-```html
-<at-article></at-article>
-```
+**Example with the `at-block` component**
 
-Property | Default | Explanations
---- | --- | ---
-class | `at-article` | Global class
-id | `at-article` | Global id
-toc | `false` | Display the `at-toc` component
-
-### at-article-content
-It indicates the field of action of the main content of the article, its body, its content.
-
-```html
-<at-article-content></at-article-content>
-```
-
-Property | Default | Explanations
---- | --- | ---
-class | `at-article-content` | Global class
-id | `at-article-content` | Global id
-
-### at-block
 The block element allows to highlight content with a contrasted graphic aspect with the rest of the article.
 
 ```html
-<at-block caption="true" heading="Si eum fuissemus" type="info">Lorem ispum</at-block>
+<at-block caption="true" heading="Heading example" type="info">Lorem ispum</at-block>
 ```
 
 Property | Default | Explanations
 --- | --- | ---
-caption | `false` | If `true`, display a numbering caption.
-~~captionHeading~~ |  |
+caption | `false` | If `true`, display a numbered caption
 heading  |   |  Display a heading
 type  | `default` |  The values can be `default`, `info`, `example`, `warning`, `definition` or `fact`
 
-### at-blockquote
-The blockquote element is used to indicate the quotation of a large section of text from another source.
-
-```html
-<at-blockquote author="Bruce Willis" source="Book sources">Lorem ipsum.</at-blockquote>
-```
-```html
-<at-blockquote type="locator" locator="53" locatorPrefix="p. " author="Bruce Willis" source="Source of the quote">Lorem ipsum.</at-blockquote>
-```
-
-Property | Default | Explanations
---- | --- | ---
-author |  | If set, display the author.
-source |  | If set, display the source.
-locator  |   |  Only with `type="locator"`.
-locatorPrefix  |   |  Only with `type="locator"`.
-type  | `default` |  The values can be `default`, `inline` or `locator`
-
-### at-callout
-The callout block calls for an action: a reference to an external or internal link ; or describes a short content intended to attract attention.
-
-```html
-<at-callout type="inline">Lorem <a href="http://example.com">link</a> ispum</at-callout>
-```
-```html
-<at-callout>Lorem ispum</at-callout>
-```
-
-Property | Default | Explanations
---- | --- | ---
-heading |  | If set, display the heading.
-type  | `block` |  The values can be `inline` or `block`
-
-### at-figure
-The figure block is used for insert a floating image, table, or graphic separate from the main text.
-
-```html
-<at-figure src="https://picsum.photos/1500/300?image=1076" href="https://example.com" fullwidth="true" title="Si eum fuissemus" caption="Ut inter quae ululatu isdem confertos moliens et milites confertos." doi="10.1007/s00223-003-0070-0" credit="Copyright 1932 by the Estate of B. Wooster. Reprinted with permission." numbering="true">Primum praefecti hirsutis ullo Montium senem in morati corpore usque praefecti hirsutis ullo Montium senem in morati.</at-figure>
-```
-
-Property | Default | Explanations
---- | --- | ---
-src |  | The source image/file
-href  |  |  If set, add a link
-fullwidth  | `false`  |  If `true`, add the *at-figure-fullwidth* class
-title  |   |  *Title* and *alt* property.
-caption  |   | If set, display a caption.
-doi  |   |  If set, display the figure DOI.
-numbering  | `false`  |  If set to `true`, number the figure
-credit  |   |  Include a credit line. If you have obtained permission to use the photograph, you should indicate this in the caption. Write a line after the full citation in your caption indicating who owns the photograph and that you have their permission to use it. For example: *Fig. 1. Reginald Pepper, Still Life with Haddock. 1919, black and white photographic print. The Estate of B. Wooster. From: B. Wooster, Pepper’s Pictures. London: Faux Publications, 1932. Pl. 275. Copyright 1932 by the Estate of B. Wooster. Reprinted with permission.*
-~~citation~~  |   |  
-
-### at-note
-The note inline block allows to insert a content at the bottom of a page or in the margin. The note provide an author's comments on the main text. It can be numbered or not.
-
-```html
-<at-note type="margin">Simple margin note with a <a href="https://example.com">link</a> without numbering.</at-note>
-```
-```html
-<at-note>Default note numbering.</at-note>
-```
-
-Property | Default | Explanations
---- | --- | ---
-type  | `default` |  The values can be `default`, `foot` or `margin`. `default` display the note inline with small screen and margin with large screen. margin display the note inline with small screen and margin with large screen without numbering it. `foot` create a simple link to the note in the `at-notes` note in the section.
-
-### at-notes
-This section block is essential to display footnotes. It is to be disposed of outside the `at-article-content` block.
-
-```html
-<at-notes></at-notes>
-```
-```html
-<at-notes heading="Noten"></at-notes>
-```
-
-Property | Default | Explanations
---- | --- | ---
-heading  | `Notes` |  Set the heading of the notes section.
-
-### at-reference
-The reference inline block allows for the insertion of a reference to content outside the article that the author uses to support his or her claim: book, article, website, etc.
-
-```html
-<at-reference key="aa2012" title="Biological concepts" creator="Albert Auguste" itemType="journalArticle" date="2012" publisher="Nature" pages="138-143" volume="4" issue="2" language="en" issn="2334-1984" pmid="2345" doi="10.1007/s00223-003-0070-0"></at-reference>
-```
-```html
-<at-reference key="key" title="Paris, ville de la mode" creator="Jean Dubois" itemType="webpage" date="2012" publisher="Le Monde" place="Paris"></at-reference>
-```
-```html
-<at-reference type="inline" title="Paris, ville de la mode" creator="Jean Dubois" itemType="webpage" date="2012" publisher="Le Monde" place="Paris"></at-reference>
-```
-```html
-<at-reference type="a-d" title="Physics" creator="Albert Henri Einstein" date="2015" publisher="Point" url="https://example.com"></at-reference>
-```
-
-Property | Default | Explanations
---- | --- | ---
-type  | `default` |  The values can be `default`, `inline`, `author-date`, `a-d` or `bibliography`.
-creator  |   |  
-title  |   |  
-publisher  |   |  Set here the publisher, the publication title or the website title.
-place  |   |  
-numPages  |   |  Number of pages
-pages  |   |  
-volume  |   |  
-issue  |   |  
-chapter  |   |  
-language  |   |  With ISO 639 codes
-isbn  |   |  ISBN number
-issn  |   |  ISSN number
-doi  |   |  
-pmid  |   |  PMID number
-url  |   |  Reference's url
-callNumber  |   |  
-key  |   |  
-
-### at-references
-This section block is essential to display references. It works like a bibliography or as a summary of the references inserted in the article. It is to be disposed of outside the `at-article-content` block.
-
-```html
-<at-references></at-references>
-```
-```html
-<at-references heading="Referenz"></at-references>
-```
-
-Property | Default | Explanations
---- | --- | ---
-heading  | `References` |  Set the heading of the notes section.
-
-### at-abstract
-This block is used to offer a shortened content of the article by using different words and sentences to help the reader quickly ascertain the article's purpose. It is usually inserted at the beginning of an article.
-
-```html
-<at-abstract>Lorem ispum</at-abstract>
-```
-
-### at-summary
-This block is used to offer a short conclusion of the article to help the reader quickly ascertain the article's purpose. It is usually inserted at the end of an article.
-
-```html
-<at-summary>Lorem ispum</at-summary>
-```
-
-### at-toc
-The block is used to insert a table of content (toc) of the article. The headings covered range from h2 to h6. The components use the [anchor-js](https://github.com/bryanbraun/anchorjs) and [tocbot](https://github.com/tscanlin/tocbot) libraries.
-
-```html
-<at-toc>Lorem ispum</at-toc>
-```
 
 ## Build with
 ![Built With Stencil](https://img.shields.io/badge/-Built%20With%20Stencil-16161d.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI%2BCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI%2BCgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU%2BCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjQuNywzNzMuOWMwLDM3LjYtNTUuMSw2OC42LTkyLjcsNjguNkgxODAuNGMtMzcuOSwwLTkyLjctMzAuNy05Mi43LTY4LjZ2LTMuNmgzMzYuOVYzNzMuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyNC43LDI5Mi4xSDE4MC40Yy0zNy42LDAtOTIuNy0zMS05Mi43LTY4LjZ2LTMuNkgzMzJjMzcuNiwwLDkyLjcsMzEsOTIuNyw2OC42VjI5Mi4xeiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDI0LjcsMTQxLjdIODcuN3YtMy42YzAtMzcuNiw1NC44LTY4LjYsOTIuNy02OC42SDMzMmMzNy45LDAsOTIuNywzMC43LDkyLjcsNjguNlYxNDEuN3oiLz4KPC9zdmc%2BCg%3D%3D&colorA=16161d&style=flat-square)
