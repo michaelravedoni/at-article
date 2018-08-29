@@ -1,21 +1,58 @@
-# at-article
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/michaelravedoni/at-article/blob/master/LICENSE)
-[![npm](https://img.shields.io/npm/v/at-article.svg?style=for-the-badge)](https://www.npmjs.com/package/at-article)
+<h1 align="center">at-article</h1> <br>
+<p align="center">
+    <img alt="at-article logo" title="at-article logo" src="docs/at-article.gif" width="450">
+</p>
+<div align="center">
+  <strong>Write clean and flat articles</strong>
+</div>
+<div align="center">
+  Web Component collection using [Stencil](https://github.com/ionic-team/stencil) for writing blogs and academics web articles.
+</div>
 
-`at-article` is a Web Component collection using [Stencil](https://github.com/ionic-team/stencil) for writing blogs and academics web articles.
+<div align="center">
+  <h3>
+    <a href="https://michaelravedoni.github.io/at-article/">Website</a>
+    <span> | </span>
+    <a href="https://michaelravedoni.github.io/at-article/documentation/">Documentation</a>
+    <span> | </span>
+    <a href="https://michaelravedoni.github.io/at-article/demo/">Demo</a>
+    <span> | </span>
+    <a href="#contributing">
+      Contributing
+    </a>
+  </h3>
+</div>
 
-![at-article preview animation](at-article.gif) "at-article preview animation"
+<div align="center">
+  <sub>Built with ❤︎ by
+  <a href="https://michael.ravedoni.com/en">Michael Ravedoni</a> and
+  <a href="https://github.com/michaelravedoni/at-article/contributors">
+    contributors
+  </a>
+</div>
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Install](#install)
+- [Usage](#usage)
+- [Building](#building)
+- [Contributing](#contributing)
+- [Release History](#release-history)
+- [Authors and acknowledgment](#authors-and-acknowledgment)
+
+## Introduction
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/michaelravedoni/at-article/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/at-article.svg?style=flat-square)](https://www.npmjs.com/package/at-article)
+![npm](https://img.shields.io/npm/dt/at-article.svg?style=flat-square)
+![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/at-article.svg?style=flat-square)
 
 ## Features
 
 - 12 web-components for web native article writing
 - usable in any web environment
 - clean and flat design
-
-Demo :
-
-- [academic article](https://michaelravedoni.github.io/at-article/demo-academic.html)
-- [blog article](https://michaelravedoni.github.io/at-article/demo-blog.html)
 
 ## Install
 
@@ -56,7 +93,6 @@ type  | `default` |  The values can be `default`, `info`, `example`, `warning`, 
 
 
 ## Build with
-![Built With Stencil](https://img.shields.io/badge/-Built%20With%20Stencil-16161d.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI%2BCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI%2BCgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU%2BCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjQuNywzNzMuOWMwLDM3LjYtNTUuMSw2OC42LTkyLjcsNjguNkgxODAuNGMtMzcuOSwwLTkyLjctMzAuNy05Mi43LTY4LjZ2LTMuNmgzMzYuOVYzNzMuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyNC43LDI5Mi4xSDE4MC40Yy0zNy42LDAtOTIuNy0zMS05Mi43LTY4LjZ2LTMuNkgzMzJjMzcuNiwwLDkyLjcsMzEsOTIuNyw2OC42VjI5Mi4xeiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDI0LjcsMTQxLjdIODcuN3YtMy42YzAtMzcuNiw1NC44LTY4LjYsOTIuNy02OC42SDMzMmMzNy45LDAsOTIuNywzMC43LDkyLjcsNjguNlYxNDEuN3oiLz4KPC9zdmc%2BCg%3D%3D&colorA=16161d&style=flat-square)
 
 - [Stencil](https://github.com/ionic-team/stencil) is a compiler for building fast web apps using Web Components.
 
@@ -121,6 +157,7 @@ We’re really happy to accept contributions from the community, that’s the ma
 
 - `citeproc-js` implementation
 - themes implementation
+- pdf export
 
 ## Authors and acknowledgment
 
