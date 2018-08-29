@@ -10,7 +10,7 @@ export class AtBlock {
   @Prop() caption: boolean;
   @Prop() captionHeading: string;
   @Prop() heading: string;
-  @Prop() type: string = 'default'; // default, info, example, warning
+  @Prop() type: string = 'default'; // default, info, example, warning, definition, fact
 
   @State() cHeading: string;
 
@@ -18,6 +18,8 @@ export class AtBlock {
     if (this.type == 'info') {this.cHeading = 'Info';}
     else if (this.type == 'example') {this.cHeading = 'Example';}
     else if (this.type == 'warning') {this.cHeading = 'Warning';}
+    else if (this.type == 'definition') {this.cHeading = 'Definition';}
+    else if (this.type == 'fact') {this.cHeading = 'Fact';}
 
     return (
       <div class={'at-article-block at-article-block-'+this.type}>

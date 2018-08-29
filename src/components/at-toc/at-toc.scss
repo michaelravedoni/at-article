@@ -1,0 +1,95 @@
+// Name:            Toc
+// Description:     -
+//
+// Component:       `at-toc`
+//
+// ========================================================================
+
+@import "../../globals/at-article.scss";
+
+// Variables
+// ========================================================================
+
+$toc-link-active-color:               $global-primary-color !default;
+$toc-link-passive-color:              $global-muted-color !default;
+
+at-toc {
+  /* ========================================================================
+     Toc for tocbot
+   ========================================================================== */
+  /* Position
+    ========================================================================== */
+  .js-at-toc {
+    position: absolute;
+    top: unset;
+    left: 10px;
+    margin-top: 40px;
+    width: 250px;
+    overflow-y: auto;
+  }
+
+  .js-at-toc.is-position-fixed {
+    top: 0px;
+  }
+  @media (max-width: $global-breakpoint-large) {
+   .js-at-toc {
+     display: none;
+    }
+  }
+
+  .is-position-fixed {
+    position: fixed !important;
+    top: 0;
+  }
+  /* List
+   ========================================================================== */
+  .js-at-toc > .toc-list {
+    overflow: hidden;
+    position: relative;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  .toc-list {
+    margin: 0;
+    padding-left: 10px;
+  }
+  /* Link
+   ========================================================================== */
+  a.toc-link {
+    color: currentColor;
+    height: 100%;
+  }
+
+  .is-active-link {
+    font-weight: 700;
+  }
+  // Left line before pseudo element.
+  .toc-link::before {
+    background-color: $toc-link-passive-color;
+    content: ' ';
+    display: inline-block;
+    height: inherit;
+    left: 0;
+    margin-top: -1px;
+    position: absolute;
+    width: 2px;
+  }
+
+  .is-active-link::before {
+    background-color: $toc-link-active-color;
+  }
+  /* Collapse
+   ========================================================================== */
+  .is-collapsible {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+  }
+
+  .is-collapsed {
+    max-height: 0;
+  }
+} // end at-toc

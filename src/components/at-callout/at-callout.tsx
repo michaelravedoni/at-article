@@ -16,7 +16,7 @@ export class AtCallout {
     if (this.type == 'inline') {
       return (
         <div class={'at-article-callout at-article-callout-'+this.type}>
-          &#10532; <slot></slot>
+          &#10532;&nbsp;<slot></slot>
         </div>
       );
     } else {

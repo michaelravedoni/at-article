@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Block</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <!-- <script src='https://unpkg.com/at-article@latest/dist/at-article.js'></script> -->
+  <script src="../dist/at-article.js"></script>
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  
+  <link rel="stylesheet" href="/assets/at-article.css">
+</head>
+<body>
+	<h1>Block test</h1>
+	<at-article class="">
+	<h2>at-article</h2>
+      <at-block caption="false" heading="Default block heading">Default block content</at-block>
+			<at-block caption="true" heading="Info block heading" type="info">Info block content</at-block>
+			<at-block caption="true" heading="Second Info block heading" type="info">Second Info block content</at-block>
+			<at-block caption="true" heading="Warning block heading" type="warning">Warning block content</at-block>
+			<at-block caption="true" heading="Example block heading" type="example">Example block content</at-block>
+			<at-block>No caption, no heading block</at-block>
+			Lorem ispum text <at-callout type="inline">Inline callout content with a <a href="http://example.com">link</a>.</at-callout> lorem ispum text.
+			<at-callout type="block">Block callout content</at-callout>
+</at-article>
+
+
+<article class="at-article">
+	<h2>at-article in style</h2>
+		<at-block caption="false" heading="Default block heading">Default block content</at-block>
+			<at-block caption="true" heading="Info block heading" type="info">Info block content</at-block>
+			<at-block caption="true" heading="Second Info block heading" type="info">Second Info block content</at-block>
+			<at-block caption="true" heading="Warning block heading" type="warning">Warning block content</at-block>
+			<at-block caption="true" heading="Example block heading" type="example">Example block content</at-block>
+			<at-block>No caption, no heading block</at-block>
+			Lorem ispum text <at-callout type="inline">Inline callout content with a <a href="http://example.com">link</a>.</at-callout> lorem ispum text.
+			<at-callout type="block">Block callout content</at-callout>
+        <h2>Style</h2>
+        <h4>Exampleblock</h4>
+        <div class="at-article-block">
+            <p>The truth may be puzzling. It may take some work to grapple with. It may be counterintuitive. It may contradict deeply held prejudices. It may not be consonant with what we desperately want to be true. But our preferences do not determine
+                what's true. We have a method, and that method helps us to reach not absolute truth, only asymptotic approaches to the truth — never there, just closer and closer, always finding vast new oceans of undiscovered possibilities. Cleverly
+                designed experiments are the key.</p>
+        </div>
+        <h4>Infoblock</h4>
+        <div class="at-article-block at-article-block-info">
+            <p>The truth may be puzzling. It may take some work to grapple with. It may be counterintuitive. It may contradict deeply held prejudices. It may not be consonant with what we desperately want to be true. But our preferences do not determine
+                what's true. We have a method, and that method helps us to reach not absolute truth, only asymptotic approaches to the truth — never there, just closer and closer, always finding vast new oceans of undiscovered possibilities. Cleverly
+                designed experiments are the key.</p>
+        </div>
+        <h4>Warningblock</h4>
+        <div class="at-article-block at-article-block-warning">
+            <p>The truth may be puzzling. It may take some work to grapple with. It may be counterintuitive. It may contradict deeply held prejudices. It may not be consonant with what we desperately want to be true. But our preferences do not determine
+                what's true. We have a method, and that method helps us to reach not absolute truth, only asymptotic approaches to the truth — never there, just closer and closer, always finding vast new oceans of undiscovered possibilities. Cleverly
+                designed experiments are the key.</p>
+        </div>
+        <h4>Callout</h4>
+		Lorem ispum text <at-callout type="inline">Inline callout content with a <a href="http://example.com">link</a>.</at-callout> lorem ispum text.
+		<at-callout type="block">Block callout content</at-callout>
+		</article>
+
+</body>
+</html>

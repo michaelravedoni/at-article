@@ -1,41 +1,53 @@
 {
   "name": "at-article",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Web components and layout for blog and academic articles",
-  "author": "Michael Ravedoni",
+  "author": "Ionic Team",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/michaelravedoni/at-article/issues"
+    "url": "https://github.com/ionic-team/stencil"
   },
-  "homepage": "https://github.com/michaelravedoni/at-article",
+  "homepage": "https://github.com/ionic-team/stencil",
   "repository": {
     "type": "git",
-    "url": "https://github.com/michaelravedoni/at-article.git"
+    "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
   },
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
   "scripts": {
+    "dev": "npm run start",
     "build": "stencil build",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
-    "serve": "stencil-dev-server",
-    "start": "npm run dev",
-    "test": "jest --no-cache",
-    "test.watch": "jest --watch --no-cache",
-    "release": "release-it",
-    "release-dry": "release-it --dry-run --verbose"
+    "start": "stencil build --dev --watch --serve",
+    "test": "jest",
+    "test.watch": "jest --watch",
+    "release": "npm run build && npm publish",
+    "release-dry": "release-it --dry-run --verbose",
+    "doc": "bundle exec jekyll serve"
   },
   "dependencies": {
-    "@stencil/core": "next",
-    "@stencil/router": "latest",
-    "tippy.js": "^2.0.8"
+    "anchor-js": "^4.1.1",
+    "tippy.js": "^2.5.4",
+    "tocbot": "^4.3.2"
   },
   "devDependencies": {
-    "@stencil/dev-server": "latest",
-    "@stencil/utils": "latest",
-    "@types/jest": "^21.1.10",
-    "jest": "^21.2.1",
-    "release-it": "^6.0.0"
+    "@stencil/core": "^0.11.0",
+    "@stencil/postcss": "^0.1.0",
+    "@stencil/sass": "^0.1.0",
+    "@types/autoprefixer": "^6.7.3",
+    "@types/jest": "^23.3.1",
+    "autoprefixer": "^9.1.3",
+    "cssnano": "^4.1.0",
+    "jest": "^23.4.2",
+    "postcss-comment": "^2.0.0",
+    "postcss-font-magician": "^2.2.1",
+    "postcss-import": "^12.0.0",
+    "precss": "^3.1.2",
+    "release-it": "^7.6.0"
   },
   "jest": {
     "transform": {
@@ -49,9 +61,5 @@
       "json",
       "jsx"
     ]
-  },
-  "main": "dist/at-article.js",
-  "types": "dist/types/components.d.ts",
-  "collection": "dist/collection/collection-manifest.json",
-  "browser": "dist/at-article.js"
+  }
 }

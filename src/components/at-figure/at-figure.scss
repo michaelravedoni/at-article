@@ -1,8 +1,30 @@
+// Name:            Figure
+// Description:     -
+//
+// Component:       -
+//
+// ========================================================================
+
+@import "../../globals/at-article.scss";
+
+// Variables
+// ========================================================================
+
+$figcaption-font-color:                      $global-tertiary-color !default;
+$figcaption-font-size:                       0.889em !default;
+
+/* ========================================================================
+   Figure
+ ========================================================================== */
 at-figure {
 
+  /* Figure
+   ========================================================================== */
   figure {
     margin:auto;
   }
+  /* Fullwidth
+   ========================================================================== */
   .at-figure-fullwidth {
     width: 100vw;
     max-width: none;
@@ -15,15 +37,27 @@ at-figure {
   .at-figure-no-fullwidth {
     width:100%;
   }
+  /* Caption
+   ========================================================================== */
   .at-figure-caption {
+    color: $figcaption-font-color;
+    font-size: $figcaption-font-size;
     text-align: left;
-    color:grey;
-    margin: .5rem 0 1rem 0;
+    margin: .5em 0 1em 0;
   }
+  /* Numbering
+   ========================================================================== */
   .at-figure-caption-numbering {}
+
+  /* Title
+   ========================================================================== */
   .at-figure-caption-title {
     font-weight: 600;
   }
-  .at-figure-caption-text {font-size: 85%}
+  /* Content
+   ========================================================================== */
+  .at-figure-caption-text {
+    font-size: $figcaption-font-size;
+  }
   .at-figure-caption-doi, .at-figure-caption-credit {}
 }

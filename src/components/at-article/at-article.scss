@@ -1,34 +1,190 @@
+// Name:            at-article
+// Description:     -
+//
+// Component:       at-article
+//
+// ========================================================================
+
+@import "../../globals/at-article.scss";
+@import "../../globals/theme-default/base.scss";
+
+// Variables
+// ========================================================================
+
+$base-font-family:                $global-font-family !default;
+$base-font-size:                  $global-font-size !default;
+$base-font-height:                $global-line-height !default;
+
+$base-font-size-medium:           17px !default;
+$base-font-size-small:            16px !default;
+$base-font-size-lead:             20px !default;
+$base-font-size-lead-small:       18px !default;
+
+$base-background:                 $global-background !default;
+$base-font-color:                 $global-font-color !default;
+$base-font-color-emphasis:        $global-emphasis-color !default;
+$base-font-color-cite:            $global-tertiary-color !default;
+$base-font-color-mark:            $global-quaterly-color !default;
+
+$base-link-color:                 $global-link-color !default;
+$base-link-color-hover:           $global-link-hover-color !default;
+
+$base-dt-border-color:            #D5DBDB !default;
+
+$article-max-width:               640px !default;
+
+/* ========================================================================
+   Layout
+ ========================================================================== */
+ at-article {
+   article {
+     max-width: $article-max-width;
+     margin-left: auto;
+     margin-right: auto;
+     background-color: $global-background;
+   }
+   @media only screen and (max-width: $article-max-width + 40px) {
+     article {
+       margin-left: 1em;
+       margin-right: 1em;
+     }
+   }
+ }
+
+/* ========================================================================
+ Typography
+========================================================================== */
+
 at-article {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  font-color: #666;
-  line-height: 1.618;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  color: $base-font-color;
+  line-height: $base-font-height;
 
-  article {
-    max-width: 620px;
-    margin-left: auto;
-    margin-right: auto;
+  @media only screen and (max-width: $global-breakpoint-medium) {
+    article {
+      font-size: $base-font-size-medium;
+      line-height: $base-font-size-medium*$base-font-height;
+    }
   }
-  /**
-  * Paragraph
-  **/
-
-  p {
-    margin:0;
-    margin-bottom: 2em;
-  }
-
-  /* Note + Block */
-  @media (min-width: 1200px) {
-    .at-article-block .at-note {
-      left: 2.5rem;
+  @media only screen and (max-width: $global-breakpoint-small) {
+    article {
+      font-size: $base-font-size-small;
+      line-height: $base-font-size-small*$base-font-height;
     }
   }
 
-  /* Counter */
+  /* ========================================================================
+  Link
+  ========================================================================== */
+  a {
+    color: $base-link-color;
+  }
+  a:hover {
+    color: $base-link-color-hover;
+  }
+
+  /* ========================================================================
+     Inline element
+   ========================================================================== */
+  em {
+    color: $base-font-color-emphasis;
+  }
+  i {
+    font-style: italic;
+  }
+  strong {
+    font-weight: 800;
+  }
+  dfn {
+    font-style: italic;
+  	text-decoration-color: $global-tertiary-color;
+  	text-decoration-line: underline;
+  	text-decoration-style: dotted;
+  	text-decoration-skip-ink: auto;
+    text-decoration-skip: auto;
+  }
+  u, ins {
+    font-style: italic;
+    text-decoration-line: underline;
+    text-decoration-skip: ink;
+  }
+  abbr {
+    cursor: help;
+  	text-decoration-line: underline;
+  	text-decoration-style: dotted;
+    text-decoration-skip: ink;
+  }
+  cite, q {
+    color: $base-font-color-cite;
+    font-style: italic;
+  }
+  cite q, q q {
+    color: $base-font-color;
+    font-style: normal;
+  }
+  mark {
+  	background-color: lighten($base-font-color-mark, 20);
+  	display: inline-block;
+    text-align: left;
+    font-size: 87.5%;
+    line-height: 1;
+    padding: .25em .35em;
+  }
+  var {
+    display: inline-block;
+    font-size: 87.5%;
+    line-height: 1;
+    color: $base-font-color;
+  	opacity: .7;
+  	font-style: normal;
+  }
+  sub, sup {
+      font-size: .6em;
+  }
+  sup {
+      vertical-align: top;
+      position: relative;
+      bottom: -.2em;
+  }
+  sub {
+      line-height: 1;
+  }
+  small, time {
+      display: inline;
+      font-size: 87.5%;
+      line-height: 1;
+      color: $base-font-color;
+  }
+
+  /* ========================================================================
+  Paragraph
+  ========================================================================== */
+  p {
+    margin:0;
+    margin-bottom: 0.8rem;
+  }
+  @media screen and (min-width: 37em) {
+    p+p {
+      margin-top: -0.8rem;
+      text-indent: 32px;
+      text-indent: 1.618rem;
+    }
+    p+p at-note {
+      text-indent: initial;
+    }
+  }
+
+  /* ========================================================================
+  Counter
+  ========================================================================== */
+
+  /* Reset
+   ========================================================================== */
   counter-reset: block-example block-info block-warning at-figure at-note;
 
-  /* Block: counter */
+  /* Block
+   ========================================================================== */
   .at-article-block-example .at-article-block-caption-number::before {
     counter-increment: block-example;
     content: " " counter(block-example);
@@ -41,12 +197,22 @@ at-article {
     counter-increment: block-warning;
     content: " " counter(block-warning);
   }
-  /* Figure: counter */
+  .at-article-block-definition .at-article-block-caption-number::before {
+    counter-increment: block-definition;
+    content: " " counter(block-definition);
+  }
+  .at-article-block-fact .at-article-block-caption-number::before {
+    counter-increment: block-fact;
+    content: " " counter(block-fact);
+  }
+  /* Figure
+   ========================================================================== */
   .at-figure-caption-numbering::after {
     counter-increment: at-figure;
     content: " " counter(at-figure) ".";
   }
-  /* Notes: counter */
+  /* Notes
+   ========================================================================== */
   .at-note-number::after {
     counter-increment: at-note;
     content: "" counter(at-note, lower-roman) "";
@@ -57,6 +223,7 @@ at-article {
     left: 0rem;
   }
   .at-note-default::before {
+    counter-increment: at-note;
     content: "" counter(at-note, lower-roman) " ";
     position: relative;
     vertical-align: baseline;
@@ -64,4 +231,4 @@ at-article {
     top: -0.3rem;
     left: 0rem;
   }
-}
+} // end at-article

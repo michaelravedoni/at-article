@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Blog Demo for at-article</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <!-- <script src='https://unpkg.com/at-article@latest/dist/at-article.js'></script> -->
+  <script src="../dist/at-article.js"></script>
+</head>
+<body>
+	<a href="base.html">Test:base</a> <a href="article.html">Test:article</a> <a href="block.html">Test:block</a> <a href="blockquote.html">Test:blockquote</a> <a href="code.html">Test:code</a> <a href="figure.html">Test:figure</a> <a href="table.html">Test:table</a>
+	<br />
+	<a href="article/components.html">Article:components</a> <a href="article/hand.html">Article:hand</a> <a href="article/html.html">Article:html</a>
+	
+  <at-article class="">
+    <at-article-content>
+	<h1>Blog Demo for at-article</h1>
+		<at-abstract>Abstract block content. Lorem ispum at nunc si ad aliquem bene nummatum tumentemque ideo honestus advena salutatum introieris, primitus tamquam exoptatus suscipieris et interrogatus multa coactusque mentiri, miraberis numquam antea visus summatem virum tenuem te sic enixius observantem, ut paeniteat ob haec bona tamquam praecipua non vidisse ante decennium Romam.</at-abstract>
+      <p>Haec igitur Epicuri non probo, inquam<at-note>First simple note cum haec taliaque sollicitas eius aures everberarent expositas semper eius modi rumoribus et patentes, varia animo tum miscente consilia, tandem id ut optimum factu elegit: et Vrsicinum primum ad se venire summo cum honore mandavit ea.</at-note>. De cetero vellem equidem aut ipse doctrinis fuisset instructior est enim, quod tibi ita videri necesse est, non satis politus iis artibus, quas qui tenent <at-callout>Voir <a href="http://example.com" target="_blank">Texte vers un lien</a> pour plus d'information</at-callout>, eruditi appellantur aut ne deterruisset alios a studiis. quamquam te quidem video<at-note>Second simple note eruditi appellantur aut ne <a href="https://example.com">deterruisset</a> alios a studiis.</at-note> minime esse deterritum.</p>
+	  <h2>Heading 2</h2>
+	  <h3>Heading 3</h3>
+	  <h2 class="nocount">Heading 2 nocount</h2>
+      <at-block heading="Si eum fuissemus" type="info" caption="true"><p>Cyprum itidem insulam procul a continenti discretam et portuosam inter municipia crebra urbes duae faciunt claram Salamis et Paphus, altera Iovis delubris altera Veneris templo insignis. tanta autem tamque multiplici fertilitate abundat rerum omnium eadem<at-reference key="key" title="Biological concepts" creator="Albert Auguste" itemType="journalArticle" date="2012" publisher="Nature" pages="138-143" volume="4" issue="2" language="en" issn="2334-1984" pmid="2345" doi="10.1007/s00223-003-0070-0"></at-reference> Cyprus ut nullius externi indigens adminiculi indigenis<at-note type="foot">Third only foot note fundamento ipso carinae ad supremos</at-note> viribus a fundamento ipso carinae ad supremos usque carbasos aedificet onerariam navem omnibusque armamentis instructam mari committat.</p><p>Cognitis enim pilatorum caesorumque <at-reference type="a-d" title="Titre de l'ouvrage a-d" creator="Albert Henri Einstein" date="2015" publisher="Point" url="https://example.com"></at-reference> funeribus nemo deinde ad has stationes appulit navem, sed ut Scironis praerupta letalia declinantes<at-note>De cetero vellem equidem aut ipse doctrinis fuisset instructior est enim, quod tibi ita videri necesse est, non satis politus iis artibus, quas qui tenent, eruditi appellantur aut ne deterruisset alios a studiis.</at-note> litoribus Cypriis contigui navigabant, quae Isauriae scopulis sunt controversa.</p></at-block>
+      <at-figure src="https://picsum.photos/1500/300?image=1076" href="https://example.com" fullwidth="true" title="Si eum fuissemus" caption="Ut inter quae ululatu isdem confertos moliens et milites confertos." doi="10.1007/s00223-003-0070-0" credit="Copyright 1932 by the Estate of B. Wooster. Reprinted with permission." numbering="true">Primum praefecti hirsutis ullo Montium senem in morati corpore usque praefecti hirsutis ullo Montium senem in morati.</at-figure>
+      <at-blockquote author="Bruce Willis" source="Book sources">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</at-blockquote>
+      <at-blockquote type="locator" locator="53" label="p. " author="Bruce Willis" source="Source of the quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</at-blockquote>
+      <at-figure src="https://picsum.photos/1500/300?image=1076" href="https://example.com" fullwidth="false" title="Si eum fuissemus" caption="Ut inter quae ululatu isdem confertos moliens et milites confertos." numbering="true">Primum praefecti hirsutis ullo Montium senem in morati corpore usque.</at-figure>
+      <p>Cognitis enim pilatorum <at-citation key="danmic12"></at-citation> caesorumque funeribus nemo deinde ad has stationes appulit navem, sed ut Scironis praerupta <at-note type="margin">Simple margin note with a <a href="https://example.com">link</a> and a reference <at-reference key="key" title="Dans une margin note" creator="Michael Ravedoni" itemType="webpage" date="2012" publisher="Le Monde" place="Paris"></at-reference>. Awesome !</at-note> letalia declinantes litoribus Cypriis contigui navigabant, quae Isauriae<at-citation key="danmic12"  pref="pref " locator="23"></at-citation> scopulis sunt controversa.</p>
+      <at-callout type="block">Voir <a href="http://example.com">Texte vers un lien</a> pour plus d'information</at-callout>
+      <at-block type="example" caption="true"><p>Cyprum itidem insulam procul a continenti discretam et portuosam inter municipia crebra urbes duae faciunt claram Salamis et Paphus, altera Iovis delubris altera Veneris templo insignis.</p></at-block>
+      <at-block type="example" caption="true"><p>Cyprum itidem insulam procul a continenti discretam et portuosam inter municipia crebra urbes duae faciunt claram Salamis et Paphus, altera Iovis delubris altera Veneris templo insignis.</p></at-block>
+      <p>I like this book : <at-reference type="inline" key="key" title="Titre de l'article" creator="Michael Ravedoni" itemType="journalArticle" date="2016" publisher="Nature" pages="138-143" volume="4" issue="2" language="en" issn="2334-1984" pmid="2345" doi="10.1007/s00223-003-0070-0"></at-reference>. Cognitis enim pilatorum caesorumque<at-note>Cyprum itidem insulam procul a continenti discretam et portuosam inter municipia crebra urbes duae faciunt claram Salamis et Paphus with a reference <at-reference key="key" title="Titre dans une note" creator="Michael Ravedoni" itemType="book" date="2016" publisher="Gallimard" place="Paris" numPages="284" pages="3" language="fr" isbn="978-2-8688-9006-1" url="https://example.com"></at-reference>.</at-note>.</p>
+    </at-article-content>
+    <at-notes></at-notes>
+    <at-references heading="Références"></at-references>
+    <h2>Selected publications</h2>
+	<at-reference type="bibliography" title="Titre de l'ouvrage a-d" creator="Albert Henri Einstein" date="2015" publisher="Point" url="https://example.com">Such statements, while reflective of the hacker ethic, also reflected the difficulty of translating the loose, informal nature of that ethic into the rigid, legal language of copyright.</at-reference>
+</at-article>
+
+
+<article class="at-article" style="margin-left:20%;max-width:620px;">
+        <header>
+            <h2>Components</h2>
+            <p>Components combine basic HTML elements into small reusable pieces that act as the building blocks of our modules and layouts.</p>
+        </header>
+        <h3>Blockquote</h3>
+
+        <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+        <blockquote>
+            "<strong>This is a blockquote.</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet
+            at, tincidunt nec, gravida vehicula, nisl."
+        </blockquote>
+        <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+
+        <blockquote>
+            <p>p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at
+                luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+        </blockquote>
+        <p>Blockquote with <code>em</code> and <code>mark</code> :</p>
+        <blockquote>
+            <p>I didn't <em>want</em> to believe. <mark>Of course on some level I realized it was a known-plaintext attack.</mark> But I couldn't admit it until I saw for myself.</p>
+        </blockquote>
+        <p>Blockquote with <code>figure</code> and <code>figcaption</code> :</p>
+        <figure>
+            <blockquote>
+                <p>The truth may be puzzling. It may take some work to grapple with. It may be counterintuitive. It may contradict deeply held prejudices. It may not be consonant with what we desperately want to be true. But our preferences do not determine
+                    what's true. We have a method, and that method helps us to reach not absolute truth, only asymptotic approaches to the truth — never there, just closer and closer, always finding vast new oceans of undiscovered possibilities. Cleverly
+                    designed experiments are the key.</p>
+            </blockquote>
+            <figcaption>
+                Carl Sagan,<br> in <cite>Wonder and Skepticism</cite>, Volume 19, Issue 1
+            </figcaption>
+        </figure>
+		<at-blockquote author="Bruce Willis" source="Book sources">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</at-blockquote>
+		<at-blockquote type="locator" locator="53" label="p. " author="Bruce Willis" source="Source of the quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</at-blockquote>
+        <h3>Blocks</h3>
+        <h4>Exampleblock</h4>
+        <div class="block">
+            <p>The truth may be puzzling. It may take some work to grapple with. It may be counterintuitive. It may contradict deeply held prejudices. It may not be consonant with what we desperately want to be true. But our preferences do not determine
+                what's true. We have a method, and that method helps us to reach not absolute truth, only asymptotic approaches to the truth — never there, just closer and closer, always finding vast new oceans of undiscovered possibilities. Cleverly
+                designed experiments are the key.</p>
+        </div>
+        <h4>Infoblock</h4>
+        <div class="infoblock">
+            <p>The truth may be puzzling. It may take some work to grapple with. It may be counterintuitive. It may contradict deeply held prejudices. It may not be consonant with what we desperately want to be true. But our preferences do not determine
+                what's true. We have a method, and that method helps us to reach not absolute truth, only asymptotic approaches to the truth — never there, just closer and closer, always finding vast new oceans of undiscovered possibilities. Cleverly
+                designed experiments are the key.</p>
+        </div>
+        <h4>Warningblock</h4>
+        <div class="warningblock">
+            <p>The truth may be puzzling. It may take some work to grapple with. It may be counterintuitive. It may contradict deeply held prejudices. It may not be consonant with what we desperately want to be true. But our preferences do not determine
+                what's true. We have a method, and that method helps us to reach not absolute truth, only asymptotic approaches to the truth — never there, just closer and closer, always finding vast new oceans of undiscovered possibilities. Cleverly
+                designed experiments are the key.</p>
+        </div>
+        <h4>Callout</h4>
+        <div class="callout">
+            <p>The truth may be puzzling. It may take some work to grapple with. It may be counterintuitive. It may contradict deeply held prejudices. It may not be consonant with what we desperately want to be true. But our preferences do not determine
+                what's true. We have a method, and that method helps us to reach not absolute truth, only asymptotic approaches to the truth — never there, just closer and closer, always finding vast new oceans of undiscovered possibilities. Cleverly
+                designed experiments are the key.</p>
+        </div>
+        <h3>Monospace / Preformatted / Code</h3>
+        <p>Code block wrapped in "pre" and "code" tags</p>
+        <pre><code>// Loop through Divs using Javascript.
+var divs = document.querySelectorAll('div'), i;
+
+for (i = 0; i < divs.length; ++i) {
+  divs[i].style.color = "green";
+}</code></pre>
+        <p>Monospace Text wrapped in "pre" tags</p>
+        <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p></pre>
+        <p>Code with <code>samp</code> and <code>kbd</code> :</p>
+        <pre>
+			<samp> samp You are in an open field west of a big white house with a boarded
+				front door.
+				There is a small mailbox here.
+
+				&gt;</samp> <kbd> kbd open mailbox</kbd>
+
+				<samp> sampOpening the mailbox reveals:
+					A leaflet.
+
+					&gt;</samp>
+				</pre>
+        <p>Code with <code>samp</code> and <code>kbd</code> :</p>
+        <p>To make George eat an apple, select <kbd><kbd><samp>File</samp></kbd>|<kbd><samp>Eat Apple...</samp></kbd></kbd>
+        </p>
+        <p>Code with <code>code</code> :</p>
+        <pre>
+			<code>
+				#header h1 a {
+					display: block;
+					width: 300px;
+					height: 80px;
+				}
+			</code>
+		</pre>
+        <p>Code with <code>samp</code> and <code>language</code> :</p>
+        <pre>
+			<code class="language-javascript">console.log(2.3 + 2.4)</code>
+			<samp>4.699999999999999</samp>
+		</pre>
+        <h3>Tables</h3>
+        <h4>Simple table</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Contenu d'en-tête 1</th>
+                    <th>Contenu d'en-tête 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Contenu interne 1</td>
+                    <td>Contenu interne 2</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Pied de tableau 1</td>
+                    <td>Pied de tableau 2</td>
+                </tr>
+            </tfoot>
+        </table>
+        <h4>Complex table</h4>
+        <figure>
+            <table>
+                <thead>
+                    <tr>
+                        <th id="n"> Negative</th>
+                        <th> Characteristic</th>
+                        <th> Positive</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td headers="n r1"> Sad</td>
+                        <th id="r1"> Mood</th>
+                        <td> Happy</td>
+                    </tr>
+                    <tr>
+                        <td headers="n r2"> Failing</td>
+                        <th id="r2"> Grade</th>
+                        <td> Passing</td>
+                    </tr>
+                </tbody>
+            </table>
+            <figcaption>
+                Table 1. Alternative activities for knights.
+            </figcaption>
+        </figure>
+
+        <table cellspacing="0" cellpadding="0">
+            <caption>This is a table caption</caption>
+            <thead>
+                <tr>
+                    <th>Table Header 1</th>
+                    <th>Table Header 2</th>
+                    <th>Table Header 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Division 1</td>
+                    <td>Division 2</td>
+                    <td>Division 3</td>
+                </tr>
+                <tr class="even">
+                    <td>Division 1</td>
+                    <td>Division 2</td>
+                    <td>Division 3</td>
+                </tr>
+                <tr>
+                    <td>Division 1</td>
+                    <td>Division 2</td>
+                    <td>Division 3</td>
+                </tr>
+                <tr>
+                    <td colspan="3">A row with a cell spanning all 3 columns</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Table Footer 1</th>
+                    <th>Table Footer 2</th>
+                    <th>Table Footer 3</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h2>Separation line</h2>
+
+        <hr />
+
+        <h2>Heading</h2>
+        <!-- http://www.poormansstyleguide.com/ -->
+
+        <h1>Heading 1</h1>
+        <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+        <h2>Heading 2</h2>
+        <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+        <h3>Heading 3</h3>
+        <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+        <h4>Heading 4</h4>
+        <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+        <h5>Heading 5</h5>
+        <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+        <h6>Heading 6</h6>
+        <p>Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p>
+
+        <hr />
+
+        <h2>Images</h2>
+        <h3>Inline images</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.</p>
+
+        <p><img alt="Placeholder Image and Some Alt Text" src="https://placehold.it/350x150" title="A title element for this placeholder image."></p>
+
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.</p>
+
+        <h3>Caption image</h3>
+
+        <figure>
+            <img src="https://placehold.it/350x150" alt="A placeholder figure image." />
+            <figcaption>The figcaption element example</figcaption>
+        </figure>
+
+        <h3>Data / Graph image</h3>
+
+        <figure>
+            <img src="https://placehold.it/350x150" alt="A placeholder figure image." />
+            <figcaption>The figcaption element example</figcaption>
+        </figure>
+
+        <h2>Details-Summary</h2>
+
+        <details>
+            <summary>The summary element example</summary>
+            <p>The details example text. It may be styled differently based on what browser or operating system you are using.</p>
+        </details>
+
+        <hr />
+
+        <h2>Text Elements</h2>
+
+        <p>The <a href="#">a element</a> and <a href="https://example.com" target="_blank">external a element</a> examples</p>
+        <p>The <abbr>abbr element</abbr> and an <abbr title="Abbreviation">abbr</abbr> element with title examples</p>
+        <p>The <acronym title="A Cowboy Ran One New York Marathon">ACRONYM</acronym> element example</p>
+        <p>The <b>b element</b> example</p>
+        <p>The <cite>cite element</cite> example</p>
+        <p>The <code>code element</code> example</p>
+        <p>The <data value="3967381398">data element</data> example</p>
+        <p>The <del>del element</del> example</p>
+        <p>The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples</p>
+        <p>The <em>em element</em> example</p>
+        <p>The <i>i element</i> example</p>
+        <p>The <ins>ins element</ins> example</p>
+        <p>The <kbd>kbd element</kbd> example</p>
+        <p>The <mark>mark element</mark> example</p>
+        <p>The <q>q element</q> example</p>
+        <p>The <q>q element <q>inside</q> a q element</q> example</p>
+        <p>The <s>s element</s> example</p>
+        <p>The <samp>samp element</samp> example</p>
+        <p>The <small>small element</small> example</p>
+        <p>The <span>span element</span> example</p>
+        <p>The <strong>strong element</strong> example</p>
+        <p>The <sub>sub element</sub> example</p>
+        <p>The <sup>sup element</sup> example</p>
+        <p>The <time datetime="2005-05-15 19:00">time element</time> example</p>
+        <p>The <u>u element</u> example</p>
+        <p>The <var>var element</var> example</p>
+
+        <hr />
+
+        <h2>List Types</h2>
+
+        <h3 id="ordered-list">Ordered List</h3>
+        <ol>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3
+                <ol>
+                    <li>List Item 3.1</li>
+                    <li>List Item 3.2
+                        <ol>
+                            <li>List Item 3.2.1</li>
+                            <li>List Item 3.2.2</li>
+                        </ol>
+                    </li>
+                    <li>List Item 3.3</li>
+                </ol>
+            </li>
+            <li>List Item 4</li>
+        </ol>
+
+        <h3>Unordered List</h3>
+        <ul>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3
+                <ul>
+                    <li>List Item 3.1</li>
+                    <li>List Item 3.2
+                        <ul>
+                            <li>List Item 3.2.1</li>
+                            <li>List Item 3.2.2</li>
+                        </ul>
+                    </li>
+                    <li>List Item 3.3</li>
+                </ul>
+            </li>
+            <li>List Item 4</li>
+        </ul>
+
+        <h3>Definition List</h3>
+        <dl>
+            <dt>Definition Term 1</dt>
+            <dd>Definition Description 1</dd>
+            <dt>Definition Term 2</dt>
+            <dd>Definition Description 2</dd>
+        </dl>
+
+        <hr />
+
+        <h2>Media</h2>
+
+        <h3>The Audio Element</h3>
+        <audio controls>
+  <source src="https://simpl.info/audio/audio/audio.ogv" type="audio/ogg" />
+  <source src="https://simpl.info/audio/audio/audio.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+        <h3>The Video Element</h3>
+        <video width="320" height="240" controls>
+  <source src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.webm" type='video/webm;codecs="vp8, vorbis"' />
+  <source src="https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+  <track src="https://www.html5rocks.com/en/tutorials/video/basics/devstories-en.vtt" label="English subtitles" kind="subtitles" srclang="en" default />
+  Your browser does not support the video tag.
+</video>
+
+        <h3>Embedded content</h3>
+        <p>YouTube video (iframe):</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/l4f9QF0SGuQ" frameborder="0" allowfullscreen></iframe>
+
+        <header>
+            <h1>Article title</h1>
+            <p>A vocabulary and associated APIs for HTML and XHTML</p>
+            <p>Editor's Draft 9 May 2013</p>
+        </header>
+        <p class="lead">Led From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightlydomed and divided by arches into stiff sections.
+            The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+        <p>Led From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightlydomed and divided by arches into stiff sections.
+            The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+        <h2>Lorem ipsum</h2>
+        <p>This is a <a href="#!">text link</a> and a <a href="" target="_blank">external link</a>. <code>strong</code><strong>Strong is used to indicate strong importance</strong>. <code>em</code><em>This text has added emphasis</em>. The <code>b</code><b>b element</b>            is stylistically different text from normal text, without any special importance. The <code>i</code><i>i element</i> is text that is offset from the normal text. The <code>u</code><u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation. <code>del</code><del>This text is deleted</del> and <ins>This text is inserted</ins>. <code>s</code><s>This text has a strikethrough</s>. <code>sup</code>Superscript<sup>sup</sup>. <code>sub</code>Subscript for things like H <sub>2</sub>O. <code>small</code><small>This small text is small for for fine print, etc.</small> <code>abbr</code><abbr title="HyperText Markup Language">HTML</abbr>. <code>cite</code><cite>This is a citation.</cite>. <code>dfn</code>The <dfn>dfn element</dfn> indicates a definition. <code>mark</code>The <mark>mark element</mark> indicates a highlight. <code>var</code>The <var>variable element</var>, such as <var>x</var> = <var>y</var>. <code>q</code><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation.</q><code>time</code>            The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
+		</article>
+
+</body>
+</html>

@@ -4,6 +4,8 @@
 
 `at-article` is a Web Component collection using [Stencil](https://github.com/ionic-team/stencil) for writing blogs and academics web articles.
 
+![at-article preview animation](at-article.gif) "at-article preview animation"
+
 ## Features
 
 - 12 web-components for web native article writing
@@ -32,7 +34,7 @@ Use one of this solution to "install" the `at-article` component in your project
 
 ### In a stencil-starter app
 - Run `npm install at-article --save`
-- Add `{ name: 'at-article' }` to your [collections](https://github.com/ionic-team/stencil-starter/blob/master/stencil.config.js#L5)
+- Add an import to the npm packages `import my-component;`
 - Then you can use the element anywhere in your template, JSX, html, etc.
 
 ## Usage
@@ -46,8 +48,9 @@ This tag is the article container and indicates its scope.
 
 Property | Default | Explanations
 --- | --- | ---
-class | `at-article-content` | Global class
-id | `at-article-content` | Global id
+class | `at-article` | Global class
+id | `at-article` | Global id
+toc | `false` | Display the `at-toc` component
 
 ### at-article-content
 It indicates the field of action of the main content of the article, its body, its content.
@@ -58,8 +61,8 @@ It indicates the field of action of the main content of the article, its body, i
 
 Property | Default | Explanations
 --- | --- | ---
-class | `at-article` | Global class
-id | `at-article` | Global id
+class | `at-article-content` | Global class
+id | `at-article-content` | Global id
 
 ### at-block
 The block element allows to highlight content with a contrasted graphic aspect with the rest of the article.
@@ -73,7 +76,7 @@ Property | Default | Explanations
 caption | `false` | If `true`, display a numbering caption.
 ~~captionHeading~~ |  |
 heading  |   |  Display a heading
-type  | `default` |  The values can be `default`, `info`, `example`or `warning`
+type  | `default` |  The values can be `default`, `info`, `example`, `warning`, `definition` or `fact`
 
 ### at-blockquote
 The blockquote element is used to indicate the quotation of a large section of text from another source.
@@ -218,6 +221,13 @@ This block is used to offer a short conclusion of the article to help the reader
 
 ```html
 <at-summary>Lorem ispum</at-summary>
+```
+
+### at-toc
+The block is used to insert a table of content (toc) of the article. The headings covered range from h2 to h6. The components use the [anchor-js](https://github.com/bryanbraun/anchorjs) and [tocbot](https://github.com/tscanlin/tocbot) libraries.
+
+```html
+<at-toc>Lorem ispum</at-toc>
 ```
 
 ## Build with

@@ -1,0 +1,146 @@
+// Name:            at-article
+// Description:     -
+//
+// Component:       at-article
+//
+// ========================================================================
+
+@import "../../globals/at-article.scss";
+
+// Variables
+// ========================================================================
+
+$control-font-color:                      $global-font-color !default;
+$control-passive-color:                   $global-muted-color !default;
+$control-active-color:                    #f8f8f8 !default;
+$control-active-background:               $global-quaterly-color !default; //#1e87f0
+
+at-control {
+  /* ========================================================================
+     Control
+   ========================================================================== */
+
+  /* Position
+    ========================================================================== */
+    .at-control {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+  /* Buttons
+   ========================================================================== */
+   .at-control-font {
+      display: inline-flex;
+      vertical-align: middle;
+      position: relative;
+      margin-right: .2em;
+
+     a {
+        background-color: $control-active-color;
+        color: $control-font-color;
+        border: 1px solid $control-active-color;
+        text-decoration: none;
+
+        box-sizing: border-box;
+        width: 2em;
+        font-size: .8em;
+        //height: 36px;
+        //border-radius: 500px;
+        vertical-align: middle;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        transition: .1s ease-in-out;
+        transition-property: color,background-color;
+     }
+     a:hover {
+        background-color: $control-active-background;
+        color: $control-active-color;
+        border-color: $control-active-background;
+        text-decoration: none;
+     }
+   }
+   .at-control-toc,
+   .at-control-export,
+   .at-control-theme {
+      margin-right: .2em;
+      padding: 0 1em;
+      font-size: .8em;
+
+      background-color: transparent;
+      color: $control-font-color;
+      border: 1px solid $control-passive-color;
+      border-radius: 0;
+
+      overflow: visible;
+      text-transform: none;
+      display: inline-block;
+      box-sizing: border-box;
+      vertical-align: middle;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: .1s ease-in-out;
+      transition-property: color,background-color,border-color;
+   }
+   .at-control-toc:hover,
+   .at-control-export:hover,
+   .at-control-theme:hover {
+      background-color: $control-active-background;
+      color: $control-active-color;
+      border-color: $control-active-background;
+      text-decoration: none;
+   }
+   .at-control-toc-active {
+      background-color: $control-active-background;
+      color: $control-active-color;
+      border: 1px solid transparent;
+   }
+
+   /* Dropdown
+     ========================================================================== */
+   .at-control-dropdown {
+       position: relative;
+       display: inline-block;
+   }
+   .at-control-dropdown:hover .at-control-dropdown-content-export,
+   .at-control-dropdown:hover .at-control-dropdown-content-theme {
+      display: block;
+   }
+   .at-control-dropdown-content-export,
+   .at-control-dropdown-content-theme {
+       display: none;
+       position: absolute;
+       right: 0;
+       background-color: $control-active-color;
+       min-width: 160px;
+       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+       z-index: 1;
+   }
+   .at-control-dropdown-content-export a,
+   .at-control-dropdown-content-theme a {
+       color: $control-font-color;
+       font-size: .88em;
+       padding: .2em .5em;
+       text-decoration: none;
+       display: block;
+   }
+   .at-control-dropdown-content-export a:hover,
+   .at-control-dropdown-content-theme a:hover {
+      background-color: $control-passive-color;
+   }
+   .at-control-dropdown-content-export a.is-active,
+   .at-control-dropdown-content-theme a.is-active {
+      background-color: $control-active-background;
+      color:$control-active-color;
+   }
+
+
+}
+
+/* Toc toggle
+  ========================================================================== */
+.js-at-toggle-toc {
+   display: none;
+}

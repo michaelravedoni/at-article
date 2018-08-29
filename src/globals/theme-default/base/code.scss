@@ -1,0 +1,120 @@
+// Name:            Code
+// Description:     -
+//
+// Component:       -
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+
+$code-font-color:                            $global-emphasis-color !default;
+$code-font-color-combination:                #ffffff !default;
+$code-font-color-language:                   #ffffff !default;
+$code-font-background:                       #eeeeee !default;
+$code-border-color:                          $global-muted-color !default;
+$code-background:                            $global-font-color !default;
+$code-background-language:                   $global-quaterly-color !default;
+
+/* ========================================================================
+   Code
+ ========================================================================== */
+at-article,
+.#{$global-name} {
+code,
+kbd,
+samp {
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  background-color: $code-font-background;
+  color: $code-font-color;
+  display: inline-block;
+  text-align: left;
+  font-size: 87.5%;
+  line-height: 1;
+  padding: .25em .35em;
+}
+code, kbd {
+    position: relative;
+    top: -1px;
+}
+code {
+  border: 0 solid transparent;
+  border-radius: .1875rem;
+}
+kbd {
+    color: rgba(17,17,17,.75);
+    background: 0 0;
+    border: 1px solid rgba(17,17,17,.2);
+    border-radius: .1875rem;
+}
+
+/* ========================================================================
+     Pre
+ ========================================================================== */
+pre {
+  white-space: pre-wrap;
+  text-align: left;
+  padding: 1em;
+  margin: 0.5em 0;
+  border-left: 11px solid $code-border-color;
+  width: 90%;
+}
+/* CSS-tricks style */
+pre {
+  font-family: "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  clear: both;
+  color: white;
+  background: $code-background;
+  padding: 0;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -ms-word-break: normal;
+  word-break: normal;
+  word-break: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  position: relative;
+  line-height: 28px;
+  min-width: 100%;
+}
+
+ /* Combinaisons
+  ========================================================================== */
+pre *,
+pre code,
+pre kbd,
+pre samp {
+  font-size: 16px;
+  line-height: 1.75;
+  color: $code-font-color-combination;
+  background: none;
+  padding: 0.5em 1.5em;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+  overflow-x: scroll;
+}
+
+ /* Languages
+  ========================================================================== */
+pre[data-lang],
+pre[rel] {
+  padding-top: 28px;
+}
+
+pre[data-lang]::before,
+pre[rel]::before {
+  font-size: 0.75rem;
+  content: attr(rel);
+  color: $code-font-color-language;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $code-background-language;
+  padding: 0;
+  text-indent: 15px;
+}
+} // end .at-article

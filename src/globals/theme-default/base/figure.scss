@@ -1,0 +1,42 @@
+// Name:            Figure
+// Description:     -
+//
+// Component:       -
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+
+$figcaption-font-color:                      $global-tertiary-color !default;
+$figcaption-font-size:                       16px !default;
+
+.#{$global-name} {
+/* ========================================================================
+   Image
+ ========================================================================== */
+img:not(.at-figure-fullwidth) {
+  width: 100%;
+}
+
+/* ========================================================================
+    Figure
+========================================================================== */
+figure {
+  margin: auto;
+}
+
+/* Figcaption
+ ========================================================================== */
+figure figcaption {
+  color: $figcaption-font-color;
+  font-size: $figcaption-font-size;
+  text-align: left;
+}
+
+/* Figcaption + blockquote
+ ========================================================================== */
+figure blockquote + figcaption {
+  text-align: right;
+}
+} // end .at-article

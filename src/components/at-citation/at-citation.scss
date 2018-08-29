@@ -1,0 +1,55 @@
+// Name:            Citation
+// Description:     -
+//
+// Component:       `at-citation`
+//
+// ========================================================================
+
+@import "../../globals/at-article.scss";
+
+// Variables
+// ========================================================================
+
+$citation-font-color:                    $global-tertiary-color !default;
+$citation-delimiter-color:               $global-font-color !default;
+$citation-link-color:                    $global-link-color !default;
+
+$citation-font-size:                    85% !default;
+
+/* ========================================================================
+   Citation
+ ========================================================================== */
+ at-citation {
+   .at-citation {
+     position: relative;
+     vertical-align: baseline;
+     font-size: $citation-font-size;
+     top: -0.3rem;
+     left: 0rem;
+     color: $citation-font-color;
+   }
+   .at-citation a {
+     text-decoration: none;
+     background: none;
+     color: $citation-link-color;
+   }
+ } // end at-citation
+
+ /* ========================================================================
+    Citations wrapper
+  ========================================================================== */
+.at-citations-open::before {
+  content: "[";
+  display: inline;
+  color: $citation-delimiter-color;
+}
+.at-citations-close::before {
+  content: "]";
+  display: inline;
+  color: $citation-delimiter-color;
+}
+.at-citation-delimiter::before {
+  content: "; ";
+  display: inline;
+  color: $citation-delimiter-color;
+}

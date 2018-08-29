@@ -1,12 +1,32 @@
+// Name:            Abstract
+// Description:     -
+//
+// Component:       `at-abstract-*`
+//
+// ========================================================================
+
+@import "../../globals/at-article.scss";
+
+// Variables
+// ========================================================================
+
+$abstract-background-color:             #dae8f4 !default;
+$abstract-font-color:                   #3f88c5 !default;
+$abstract-link-color:                   $global-tertiary-color !default;
+$abstract-link-color-hover:             lighten($global-tertiary-color, 5) !default;
+
+/* ========================================================================
+   Abstract
+ ========================================================================== */
 at-abstract {
   .at-abstract {
     background-clip: border-box;
-    background-color: #dae8f4;
+    background-color: $abstract-background-color;
     background-image: none;
     box-sizing: border-box;
-    color: #3f88c5;
+    color: $abstract-font-color;
     display: block;
-    font-size: 16px;
+    font-size: .9em;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
@@ -20,7 +40,22 @@ at-abstract {
     font-style: normal;
     font-weight: bold;
     font-variant: normal;
-    margin-bottom: 10px;
+    margin-bottom: 1em;
     color: #222;
+  }
+
+  /* Link
+   ========================================================================== */
+  a {
+    color:$abstract-link-color;
+  }
+  a:hover {
+    color:$abstract-link-color-hover;
+  }
+
+  /* Paragraph
+   ========================================================================== */
+  p:last-child {
+    margin-bottom: 0;
   }
 }

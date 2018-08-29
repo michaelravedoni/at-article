@@ -11,8 +11,8 @@ www/
 log.txt
 *.sublime-project
 *.sublime-workspace
-release-it.json
 
+.stencil/
 .idea/
 .vscode/
 .sass-cache/
@@ -24,3 +24,4 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
+release-it.json

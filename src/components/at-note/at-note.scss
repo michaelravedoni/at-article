@@ -1,17 +1,41 @@
-$color_font_sidenote: #606060;
-$color_bg_sidenote: #D5DBDB;
-$size_font_sidenote: 0.867rem;
+// Name:            Note
+// Description:     -
+//
+// Component:       `at-note-*`
+//
+// ========================================================================
 
+@import "../../globals/at-article.scss";
+
+// Variables
+// ========================================================================
+
+$note-font-color:                     $global-tertiary-color; //#606060
+$note-background-color:               $global-muted-color;
+
+$note-font-size:                      .867em;
+$note-mark-font-size:                 .675em;
+
+/* ========================================================================
+   Note
+ ========================================================================== */
 at-note {
-  /* Type */
+
+  /* Type
+  ========================================================================== */
   .at-note-default, .at-note-margin, .at-note-foot {
     display:none;
   }
+
+  /* Number
+  ========================================================================== */
   a.at-note-number {
     text-decoration: none;
     background: none;
   }
-  /* Toggle */
+
+  /* Toggle
+  ========================================================================== */
   input.at-note-toggle {
     display: none;
   }
@@ -21,7 +45,9 @@ at-note {
   label.at-note-toggle.at-note-number {
     display: inline;
   }
-  /* Breakpoints */
+
+  /* Breakpoints
+  ========================================================================== */
   @media screen and (min-width: 1200px) {
     .at-note-default, .at-note-margin {
       display: block;
@@ -36,8 +62,8 @@ at-note {
       vertical-align: baseline;
       position: relative;
 
-      color: $color_font_sidenote;
-      font-size: $size_font_sidenote;
+      color: $note-font-color;
+      font-size: $note-font-size;
       line-height: 1.267em;
     }
   }
@@ -56,7 +82,22 @@ at-note {
       padding: 0.7rem 1rem;
       vertical-align: baseline;
       position: relative;
-      background-color: $color_bg_sidenote;
+      background-color: $note-background-color;
     }
+  }
+  @media screen and (max-width: 1400px) {
+    .at-note-default, .at-note-margin {
+      width: 45%;
+      margin-right: -55%;
+    }
+  }
+} // end at-note
+
+/* ========================================================================
+Note + Block
+========================================================================== */
+@media (min-width: 1200px) {
+  at-article .at-block .at-note {
+    left: 2.5rem;
   }
 }

@@ -1,8 +1,29 @@
+// Name:            Callout
+// Description:     -
+//
+// Component:       `at-callout-*`
+//
+// ========================================================================
+
+@import "../../globals/at-article.scss";
+
+// Variables
+// ========================================================================
+
+$callout-background-color:              #e0f2f1 !default;
+$callout-border-color:                  #00897b !default;
+$callout-icon-color:                    #004d40 !default;
+
+$callout-title-font-size:               18px !default;
+
+/* ========================================================================
+Inline
+========================================================================== */
 at-callout {
   .at-article-callout-inline {
     display: inline;
-    background-color: #e0f2f1;
-    border-bottom: 1px solid #00897b;
+    background-color: $callout-background-color;
+    border-bottom: 1px solid $callout-border-color;
     padding: 1px 0.8em;
 
     position: relative;
@@ -16,34 +37,47 @@ at-callout {
   .at-article-callout-inline a {
     text-decoration: none;
   }
+} // end at-callout
+
+/* ========================================================================
+Block
+========================================================================== */
+at-callout {
   .at-article-callout-block {
     display: grid;
     grid-template-columns: 1fr 8fr;
     grid-gap: 10px;
 
     margin-bottom: 2em;
-    padding: 1em 2em;
-    background-color: #e0f2f1;
+    padding: 1em 1em;
+    background-color: $callout-background-color;
     box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
 
     p:last-child, ul:last-child {
       margin-bottom: 0;
     }
   }
+  /* Icon
+  ========================================================================== */
   .at-article-callout-block-icon {
-    color: #004d40;
+    color: $callout-icon-color;
     font-size: 1.5em;
     margin: auto auto;
-    border-right: 1px solid #00897b;
-    padding-right: 1em;
   }
+
+  /* Content
+  ========================================================================== */
   .at-article-callout-block-content {
     margin: auto 0;
+    padding-left: 1em;
+    border-left: 1px solid $callout-border-color;
   }
-  /* Title */
+
+  /* Title
+  ========================================================================== */
   .at-article-callout-block-title {
-    font-size: 18px;
+    font-size: $callout-title-font-size;
     font-weight: 600;
     padding-bottom: 1em;
   }
-}
+} // end at-callout

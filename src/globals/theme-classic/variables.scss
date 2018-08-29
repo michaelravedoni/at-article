@@ -1,0 +1,49 @@
+/*
+* # at-article theme-classic variables
+* https://github.com/michaelravedoni/at-article
+* https://michaelravedoni.github.io/at-article/
+*
+* Released under the MIT license
+* http://opensource.org/licenses/MIT
+*
+*/
+
+// Fonts
+// ========================================================================
+@import url('https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans:400,400i,700,700i');
+
+// Variables selector
+// ========================================================================
+$global-name: at-article;
+
+// Typography
+// ========================================================================
+
+$global-font-family:                             'Quattrocento Sans', serif; //Libre Baskerville
+$global-font-family-heading:                     'Quattrocento', sans-serif;
+$global-font-size:                               18px;
+$global-line-height:                             1.618;
+
+// Colors
+// ========================================================================
+
+$global-primary-color:                           #54BC4B !default;
+$global-secondary-color:                         #F0506E !default;
+$global-tertiary-color:                          #4C565C !default;
+$global-quaterly-color:                          #3F88C5 !default;
+$global-muted-color:                             #D5DBDB !default;
+
+$global-background:                              transparent !default;
+$global-font-color:                              #222222;
+$global-heading-color:                           #222222 !default;
+$global-emphasis-color:                          $global-secondary-color !default;
+
+$global-link-color:                              $global-quaterly-color !default;
+$global-link-hover-color:                        lighten($global-link-color, 8%) !default;
+
+// Breakpoint
+// ========================================================================
+
+$global-breakpoint-large:                        1200px;
+$global-breakpoint-medium:                       960px;
+$global-breakpoint-small:                        300px;

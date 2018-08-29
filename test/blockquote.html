@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Blockquote</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <!-- <script src='https://unpkg.com/at-article@latest/dist/at-article.js'></script> -->
+  <script src="../dist/at-article.js"></script>
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  
+  <link rel="stylesheet" href="/assets/at-article.css">
+</head>
+<body>
+	<h1>Blockquote test</h1>
+	<at-article class="">
+	<h2>at-article</h2>
+      <at-blockquote author="Bruce Willis" source="Book sources">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</at-blockquote>
+      <at-blockquote type="locator" locator="53" locatorPrefix="p. " author="Bruce Willis" source="Source of the quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</at-blockquote>
+	  <at-blockquote type="locator" locator="53" locatorPrefix="p. " author="Bruce Willis" source="Source of the quote">Lorem ipsum dolor sit amet.</at-blockquote>
+</at-article>
+
+
+<article class="at-article">
+        <h2>Style</h2>
+        <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+        <blockquote>
+            <strong>This is a blockquote.</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
+        </blockquote>
+        <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+
+        <blockquote>
+            <p>p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+        </blockquote>
+        <p>Blockquote with <code>em</code> and <code>mark</code> :</p>
+        <blockquote>
+            <p>I didn't <em>want</em> to believe. <mark>Of course on some level I realized it was a known-plaintext attack.</mark> But I couldn't admit it until I saw for myself.</p>
+        </blockquote>
+        <p>Blockquote with <code>figure</code> and <code>figcaption</code> :</p>
+        <figure>
+            <blockquote>
+                <p>The truth may be puzzling. It may take some work to grapple with. It may be counterintuitive. It may contradict deeply held prejudices. It may not be consonant with what we desperately want to be true. But our preferences do not determine what's true. We have a method, and that method helps us to reach not absolute truth, only asymptotic approaches to the truth — never there, just closer and closer, always finding vast new oceans of undiscovered possibilities. Cleverly
+                    designed experiments are the key.</p>
+            </blockquote>
+            <figcaption>
+                Carl Sagan,<br> in <cite>Wonder and Skepticism</cite>, Volume 19, Issue 1
+            </figcaption>
+        </figure>
+		<h3>at-article in style</h3>
+		<at-blockquote author="Bruce Willis" source="Book sources">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</at-blockquote>
+		<at-blockquote type="locator" locator="53" locatorPrefix="p. " author="Bruce Willis" source="Source of the quote">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</at-blockquote>
+        
+		</article>
+
+</body>
+</html>

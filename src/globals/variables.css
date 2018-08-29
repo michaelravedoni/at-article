@@ -1,0 +1,61 @@
+/*
+ at-article theme-default variables
+
+ https://github.com/michaelravedoni/at-article
+ https://michaelravedoni.github.io/at-article/
+
+ Released under the MIT license
+ http://opensource.org/licenses/MIT
+ */
+
+/* ========================================================================
+ Font
+ ========================================================================== */
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');*/
+
+/* ========================================================================
+ Variables selector
+ ========================================================================== */
+:root {
+--global-name:                                      'at-article';
+}
+
+/* ========================================================================
+ Theme globals variables
+ ========================================================================== */
+
+at-article,
+at-article[theme="default"] {
+
+  /* Typography
+   ====================================================================== */
+
+  --global-font-family:                             'Open Sans', "Helvetica Neue", Arial, sans-serif;
+  --global-font-family-heading:                     'Montserrat', sans-serif;
+  --global-font-size:                               18px ;
+  --global-line-height:                             1.618;
+
+  /* Colors
+   ====================================================================== */
+
+  --global-primary-color:                           #54BC4B;
+  --global-secondary-color:                         #F0506E;
+  --global-tertiary-color:                          #4C565C;
+  --global-quaterly-color:                          #3F88C5;
+  --global-muted-color:                             #D5DBDB;
+
+  --global-background:                              transparent;
+  --global-font-color:                              grey;
+  --global-heading-color:                           #222222;
+  --global-emphasis-color:                          --global-secondary-color;
+
+  --global-link-color:                              --global-quaterly-color;
+  --global-link-hover-color:                        lighten(#3F88C5, 8%);
+
+  /* Breakpoint
+   ====================================================================== */
+
+  --global-breakpoint-large:                        1200px;
+  --global-breakpoint-medium:                       960px;
+  --global-breakpoint-small:                        300px;
+}

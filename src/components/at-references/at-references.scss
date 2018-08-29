@@ -1,6 +1,23 @@
+// Name:            References
+// Description:     -
+//
+// Component:       `at-references`
+//
+// ========================================================================
+
+@import "../../globals/at-article.scss";
+
+// Variables
+// ========================================================================
+
+$references-font-size:                    1em !default;
+
+/* ========================================================================
+   Citation
+ ========================================================================== */
 at-references {
   .at-references {
-    font-size: 1rem;
+    font-size: $references-font-size;
   }
   .at-references-item {
     margin:0 0 0.5em 0;
@@ -14,5 +31,18 @@ at-references {
   }
   .at-references ol {
     list-style: decimal;
+  }
+
+  .at-references-item-backlinks {
+    counter-reset: backlinks;
+  }
+  .at-references-item-backlinks .at-references-item-backlink {
+    display: inline;
+    font-size: 75%;
+  }
+  .at-references-item-backlinks .at-references-item-backlink:before {
+    counter-increment: backlinks;
+    content: counter(backlinks, lower-alpha) "";
+    margin-right: -1px;
   }
 }

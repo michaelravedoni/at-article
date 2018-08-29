@@ -1,0 +1,33 @@
+/*
+* # at-article theme classic
+* https://github.com/michaelravedoni/at-article
+* https://michaelravedoni.github.io/at-article/
+*
+* Released under the MIT license
+* http://opensource.org/licenses/MIT
+*
+*/
+
+at-article[theme="classic"] {
+  @import "./src/globals/theme-classic/variables.scss";
+
+  $base-font-family:                $global-font-family !default;
+  $base-font-size:                  $global-font-size !default;
+  $base-font-height:                $global-line-height !default;
+
+  $base-font-color:                 $global-font-color !default;
+
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  color: $base-font-color;
+  line-height: $base-font-height;
+
+  h2, .at-h2,
+  h3, .at-h3,
+  h4, .at-h4,
+  h5, .at-h5,
+  h6, .at-h6 {
+  	color: $base-font-color;
+  	font-family: $global-font-family-heading;
+  }
+}

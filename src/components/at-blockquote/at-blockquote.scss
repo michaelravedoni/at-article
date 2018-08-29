@@ -1,9 +1,30 @@
+// Name:            Blockquote
+// Description:     -
+//
+// Component:       `at-blockquote`
+//
+// ========================================================================
+
+@import "../../globals/at-article.scss";
+
+// Variables
+// ========================================================================
+
+$blockquote-font-size:                       $global-font-size !default;
+$blockquote-font-color:                      $global-font-color !default;
+$blockquote-figcaption-font-size:            1em !default;
+$blockquote-figcaption-font-color:           $global-tertiary-color !default;
+
+
+/* ========================================================================
+Blockquote: type="default"
+========================================================================== */
 at-blockquote {
-  /* Blockquote: Type: default */
   blockquote {
     max-width: 90%;
     font-style: italic;
-    quotes: "« " " »";
+    color: $blockquote-font-color;
+    quotes: "« " " »" '"' '"';
   }
   blockquote::before {
     content: open-quote;
@@ -11,22 +32,29 @@ at-blockquote {
   blockquote::after {
     content: close-quote;
   }
-  figure {
+  /* Figure
+  ========================================================================== */
+  figure + blockquote {
     margin-bottom: 18px;
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 18px;
   }
-  blockquote + figcaption {
+  /* Figcaption
+  ========================================================================== */
+  blockquote + figcaption,
+  .at-blockquote-locator-caption {
     text-align: right;
     margin-right: 0;
     margin-left: 10%;
-    color: #4C565C;
+    color: $blockquote-figcaption-font-color;
+    font-size: $blockquote-figcaption-font-size;
   }
   blockquote + figcaption:before {
     content: "– ";
   }
-
+  /* Blockquote and children tags
+  ========================================================================== */
   blockquote mark, q mark {
     font: inherit;
     font-style: normal;
@@ -40,25 +68,40 @@ at-blockquote {
     font-style: normal;
     text-decoration: underline;
   }
-  /* Blockquote: Type: locator */
+  blockquote p {
+    display: inline;
+  }
+} // end at-blockquote
+
+/* ========================================================================
+Blockquote: type="locator"
+========================================================================== */
+at-blockquote {
   .at-blockquote-locator {
-    display: grid;
+    //display: grid;
     grid-template-areas: 'A B' 'C C';
-    grid-column-gap: 20px;
+    grid-column-gap: 10px;
 
     margin: auto;
-    margin-bottom: 1em;
-    max-width: 90%;
+    margin-bottom: .5em;
   }
-  .at-blockquote-locator-number {
-    grid-area: A;
-    color: #4C565C;
-    font-size: .83em;
-    margin-right: 5px;
-  }
+
+  /* Locator content
+  ========================================================================== */
   .at-blockquote-locator-content {
     grid-area: B;
-    font-style: italic;
+    font-style: normal;
+    line-height: initial;
+  }
+
+  /* Locator number
+  ========================================================================== */
+  .at-blockquote-locator-number {
+    grid-area: A;
+    color: $blockquote-figcaption-font-color;
+    font-size: .83em;
+    margin-right: 5px;
+    //width:70px;
   }
   @media only screen and (min-width: 960px){
     .at-blockquote-locator-number {
@@ -67,12 +110,15 @@ at-blockquote {
       word-wrap: break-word;
     }
   }
+
+  /* Locator caption
+  ========================================================================== */
   .at-blockquote-locator-caption {
     grid-area: C;
     text-align: right;
-    margin-top: 1em;
+    margin-top: .5em;
     margin-right: 0;
     margin-left: 10%;
-    color: #4C565C;
+    color: $blockquote-figcaption-font-color;
   }
-}
+} // end at-blockquote

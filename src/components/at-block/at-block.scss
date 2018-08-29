@@ -1,34 +1,74 @@
-at-block {
-  .at-article-block {
-    margin-bottom: 2em;
-    padding: 2em;
-    box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+// Name:            Block
+// Description:     -
+//
+// Component:       `at-block-*`
+//
+// ========================================================================
 
-    p:last-child, ul:last-child {
-      margin-bottom: 0;
-    }
-  }
-  /* Title */
-  .at-article-block-title {
-    font-size: 18px;
-    font-weight: 600;
-    padding-bottom: 1em;
-  }
-  /* Type */
-  .at-article-block-info {
-    background-color: #d6eaff;
-  }
-  .at-article-block-example {
-    background-color: #fff9c4;
-  }
-  .at-article-block-warning {
-    background-color: #ffdcd6;
-  }
+@import "../../globals/at-article.scss";
 
-  /* Caption */
-  .at-article-block-caption {
-    display: inline-block;
-    font-weight: 600;
-    padding-bottom: .5em;
-  }
-}
+// Variables
+// ========================================================================
+
+$block-info-background-color:           #d6eaff !default;
+$block-example-background-color:        #fff9c4 !default;
+$block-warning-background-color:        #ffdcd6 !default;
+$block-definition-background-color:     #d8e0e7 !default;
+$block-fact-background-color:           #b2f1e7 !default;
+
+$block-font-title-size:                 1.125em !default;
+$block-font-title-color:                $global-heading-color !default;
+
+/* ========================================================================
+   Block
+ ========================================================================== */
+ at-block {
+   .at-article-block {
+     margin-bottom: 2em;
+     padding: 2em;
+     box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+
+     p:last-child, ul:last-child {
+       margin-bottom: 0;
+     }
+   }
+   /* Title
+   ========================================================================== */
+   .at-article-block-title {
+     font-size: $block-font-title-size;
+     color: $block-font-title-color;
+     font-weight: 600;
+     padding-bottom: .1em;
+
+     p:last-child,
+     ul:last-child {
+       margin-bottom: 0;
+     }
+   }
+
+   /* Type
+   ========================================================================== */
+   .at-article-block-info {
+     background-color: $block-info-background-color;
+   }
+   .at-article-block-example {
+     background-color: $block-example-background-color;
+   }
+   .at-article-block-warning {
+     background-color: $block-warning-background-color;
+   }
+   .at-article-block-definition {
+     background-color: $block-definition-background-color;
+   }
+   .at-article-block-fact {
+     background-color: $block-fact-background-color;
+   }
+
+   /* Caption
+   ========================================================================== */
+   .at-article-block-caption {
+     display: block;
+     font-weight: 600;
+     padding-bottom: .5em;
+   }
+ }

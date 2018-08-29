@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Code</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <!-- <script src='https://unpkg.com/at-article@latest/dist/at-article.js'></script> -->
+  <script src="../dist/at-article.js"></script>
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  
+  <link rel="stylesheet" href="/assets/at-article.css">
+</head>
+<body>
+	<h1>Code test</h1>
+	<at-article class="">
+		<h2>at-article</h2>
+		<h3>Monospace / Preformatted / Code</h3>
+        <p>Code block wrapped in "pre" and "code" tags</p>
+        <pre><code>// Loop through Divs using Javascript.
+var divs = document.querySelectorAll('div'), i;
+
+for (i = 0; i < divs.length; ++i) {
+  divs[i].style.color = "green";
+}</code></pre>
+	</at-article>
+
+
+<article class="at-article">
+	<h2>at-article in style</h2>
+	—
+	<h2>Style</h2>
+	<h3>Monospace / Preformatted / Code</h3>
+        <p>Code block wrapped in "pre" and "code" tags</p>
+        <pre><code>// Loop through Divs using Javascript.
+var divs = document.querySelectorAll('div'), i;
+
+for (i = 0; i < divs.length; ++i) {
+  divs[i].style.color = "green";
+}</code></pre>
+        <p>Monospace Text wrapped in "pre" tags</p>
+        <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</p></pre>
+        <p>Code with <code>samp</code> and <code>kbd</code> :</p>
+        <pre>
+			<samp> samp You are in an open field west of a big white house with a boarded
+				front door.
+				There is a small mailbox here.
+
+				&gt;</samp> <kbd> kbd open mailbox</kbd>
+
+				<samp> sampOpening the mailbox reveals:
+					A leaflet.
+
+					&gt;</samp>
+				</pre>
+        <p>Code with <code>samp</code> and <code>kbd</code> :</p>
+        <p>To make George eat an apple, select <kbd><kbd><samp>File</samp></kbd>|<kbd><samp>Eat Apple...</samp></kbd></kbd>
+        </p>
+        <p>Code with <code>code</code> :</p>
+        <pre>
+			<code>
+				#header h1 a {
+					display: block;
+					width: 300px;
+					height: 80px;
+				}
+			</code>
+		</pre>
+        <p>Code with <code>samp</code> and <code>language</code> :</p>
+        <pre rel="css">
+			<code class="language-javascript">console.log(2.3 + 2.4)</code>
+			<samp>4.699999999999999</samp>
+		</pre>
+</article>
+
+</body>
+</html>

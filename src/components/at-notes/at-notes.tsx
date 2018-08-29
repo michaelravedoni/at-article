@@ -1,4 +1,4 @@
-import { Component, Prop, State, Element } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'at-notes',
@@ -54,7 +54,7 @@ export class AtNotes {
   }
 
   render() {
-    if(this.type == 'default'){
+    if(this.type == 'default' && this.notes.length > 0){
       return (
         <div id="at-notes" class="at-notes">
         <h2>{this.heading}</h2>

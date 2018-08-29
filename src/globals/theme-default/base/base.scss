@@ -1,0 +1,180 @@
+// Name:            Base
+// Description:     -
+//
+// Component:
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+
+$base-font-family:                $global-font-family !default;
+
+$base-font-size:                  $global-font-size !default;
+$base-font-height:                $global-line-height !default;
+
+$base-font-size-medium:           17px !default;
+$base-font-size-small:            16px !default;
+$base-font-size-lead:             20px !default;
+$base-font-size-lead-small:       18px !default;
+
+$base-font-color:                 $global-font-color !default;
+$base-font-color-emphasis:        $global-emphasis-color !default;
+$base-font-color-cite:            $global-tertiary-color !default;
+$base-font-color-mark:            $global-quaterly-color !default;
+
+$base-link-color:                 $global-link-color !default;
+$base-link-color-hover:           $global-link-hover-color !default;
+
+$base-dt-border-color:            #D5DBDB;
+
+/* ========================================================================
+   Typography
+ ========================================================================== */
+.#{$global-name} {
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	color: $base-font-color;
+	line-height: $base-font-height;
+}
+
+@media only screen and (max-width: $global-breakpoint-medium) {
+	.#{$global-name} {
+		font-size: $base-font-size-medium;
+		line-height: $base-font-size-medium*$base-font-height;
+	}
+}
+@media only screen and (max-width: $global-breakpoint-small) {
+	.#{$global-name} {
+		font-size: $base-font-size-small;
+		line-height: $base-font-size-small*$base-font-height;
+	}
+}
+
+/* ========================================================================
+   Link
+ ========================================================================== */
+ a {
+	 color: $base-link-color;
+ }
+ a:hover {
+	 color: $base-link-color-hover;
+ }
+
+/* ========================================================================
+   Inline element
+ ========================================================================== */
+.#{$global-name} {
+em {
+  color: $base-font-color-emphasis;
+}
+i {
+  font-style: italic;
+}
+strong {
+  font-weight: 800;
+}
+dfn {
+  font-style: italic;
+	text-decoration-color: $global-tertiary-color;
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+	text-decoration-skip-ink: auto;
+  text-decoration-skip: auto;
+}
+u, ins {
+  font-style: italic;
+  text-decoration-line: underline;
+  text-decoration-skip: ink;
+}
+abbr {
+  cursor: help;
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+  text-decoration-skip: ink;
+}
+cite, q {
+  color: $base-font-color-cite;
+  font-style: italic;
+}
+cite q, q q {
+  color: $base-font-color;
+  font-style: normal;
+}
+mark {
+	background-color: lighten($base-font-color-mark, 20);
+	display: inline;
+  text-align: left;
+  font-size: 87.5%;
+  line-height: 1;
+  padding: .25em .35em;
+}
+var {
+  display: inline-block;
+  font-size: 87.5%;
+  line-height: 1;
+  color: $base-font-color;
+	opacity: .7;
+	font-style: normal;
+}
+sub, sup {
+    font-size: .6em;
+}
+sup {
+    vertical-align: top;
+    position: relative;
+    bottom: -.2em;
+}
+sub {
+    line-height: 1;
+}
+small, time {
+    display: inline;
+    font-size: 87.5%;
+    line-height: 1;
+    color: $base-font-color;
+}
+
+/* ========================================================================
+   Paragraph
+ ========================================================================== */
+ p {
+ 	margin:0;
+ 	margin-bottom: 0.8rem;
+ }
+ @media screen and (min-width: 37em) {
+ 	p+p {
+ 		margin-top: -0.8rem;
+ 		text-indent: 1.618rem;
+ 	}
+ }
+
+/* ========================================================================
+   Description list
+ ========================================================================== */
+dl {
+  margin-left: 1.25em;
+
+  dt {
+		font-weight: bold;
+    margin-bottom: 0.5em;
+    border-bottom: solid 2px $base-dt-border-color;
+  }
+}
+
+/* ========================================================================
+    Introduction lead paragraph
+========================================================================== */
+.lead {
+  font-weight: 400;
+  text-transform: none;
+  font-size: $base-font-size-lead-small;
+  line-height: 1.2;
+}
+@media (min-width: 600px) {
+  .lead {
+    font-size: $base-font-size-lead;
+    line-height: 1.25;
+  }
+}
+} // end .at-article

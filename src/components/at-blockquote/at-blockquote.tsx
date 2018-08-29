@@ -11,7 +11,7 @@ export class AtBlock {
   @Prop() source: string;
   @Prop() citation: string;
   @Prop() locator: string;
-  @Prop() locatorPrefix: string = "";
+  @Prop() label: string = '';
   @Prop() type: string = 'default'; // default, inline, locator
 
   render() {
@@ -32,7 +32,7 @@ export class AtBlock {
     else if (this.type == 'locator') {
       return (
         <div class="at-blockquote-locator" itemprop="hasCitation" itemscope itemtype="http://schema.org/Citation">
-          {this.locator ? (<div class="at-blockquote-locator-number" itemprop="pageNumber" title={"Localization: "+this.locatorPrefix+ this.locator}>[{this.locatorPrefix}{this.locator}]</div>) : (null)}
+          {this.locator ? (<div class="at-blockquote-locator-number" itemprop="pageNumber" title={"Localization: "+this.label+ this.locator}>[{this.label}{this.locator}]</div>) : (null)}
           <div class="at-blockquote-locator-content" itemprop="citeText"><slot></slot></div>
           {this.author || this.source ? (<div class="at-blockquote-locator-caption">
             {this.author && this.source ? (<span>– {this.author}<br /><cite>{this.source}</cite></span>) : (null)}
