@@ -1,0 +1,84 @@
+/*
+* # at-article theme dark
+* https://github.com/michaelravedoni/at-article
+* https://michaelravedoni.github.io/at-article/
+*
+* Released under the MIT license
+* http://opensource.org/licenses/MIT
+*
+*/
+
+at-article[theme="dark"] {
+  //@import "./src/globals/theme-dark/variables.scss";
+
+  $dark-tertiary-color:             #adadad;
+  $dark-background:                 #222222;
+  $dark-font-color:                 #f8f8f8;
+  $dark-quaterly-color:             #3F88C5;
+  $dark-link-color:                 lighten($dark-quaterly-color, 8%);
+  $dark-link-color-hover:           lighten($dark-link-color, 8%);
+
+  color: $dark-font-color;
+
+  article {
+    background-color: $dark-background;
+  }
+
+  a {
+    color: $dark-link-color;
+  }
+  a:hover {
+    color: $dark-link-color-hover;
+  }
+
+  h2, .at-h2,
+  h3, .at-h3,
+  h4, .at-h4,
+  h5, .at-h5,
+  h6, .at-h6 {
+  	color: $dark-font-color;
+  }
+
+  at-blockquote blockquote,
+  at-reference .at-reference-bibliography .at-reference-data {
+    color: $dark-font-color;
+  }
+
+  cite,
+  q,
+  small,
+  time,
+  at-note .at-note-default,
+  at-note .at-note-margin,
+  at-figure .at-figure-caption,
+  at-citation .at-citation,
+  at-citation .at-citations-open:before,
+  at-citation .at-citations-close:before,
+  at-reference .at-references-open:before
+  at-reference .at-references-close:before
+  at-blockquote .at-blockquote-locator-number,
+  at-blockquote .at-blockquote-locator-caption,
+  at-blockquote blockquote+figcaption,
+  at-reference .at-reference-bibliography .at-reference-abstract,
+  at-reference .at-reference-references .at-reference-gs a,
+  at-reference .at-reference-references .at-reference-read-online a {
+    color: $dark-tertiary-color;
+  }
+
+  at-block .at-article-block,
+  at-article-callout {
+    color: $dark-background;
+  }
+  at-block .at-article-block-default {
+    background-color: $dark-font-color;
+  }
+  at-block .at-article-block-info {
+
+  }
+
+  at-reference .at-reference-bibliography .at-reference-data {
+    border-bottom: 2px solid $dark-font-color;
+    color: $dark-font-color;
+  }
+
+}

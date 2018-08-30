@@ -24,8 +24,13 @@ at-control {
     ========================================================================== */
     .at-control {
       position: absolute;
-      top: 20px;
+      top: unset;
       right: 20px;
+    }
+    @media (max-width: $global-breakpoint-large) {
+     .at-control {
+       display: none;
+      }
     }
 
   /* Buttons

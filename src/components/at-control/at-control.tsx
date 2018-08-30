@@ -96,15 +96,15 @@ export class AtControl {
         <div class="at-control-dropdown">
           <span class="at-control-export">Export</span>
           <div class="at-control-dropdown-content-export">
-            <a href="#" onClick={this.print} id="print">Print</a>
+            <a onClick={this.print} id="print">Print</a>
           </div>
         </div>
 
         <div class="at-control-dropdown">
           <span class="at-control-theme">Theme</span>
           <div class="at-control-dropdown-content-theme">
-            <a href="#" onClick={this.changeTheme.bind(this)} id="default">at-article</a>
-            <a href="#" onClick={this.changeTheme.bind(this)} id="classic">classic</a>
+            <a onClick={this.changeTheme.bind(this)} id="default">at-article</a>
+            <a onClick={this.changeTheme.bind(this)} id="classic">classic</a>
           </div>
         </div>
       </div>

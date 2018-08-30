@@ -12,7 +12,7 @@ export class AtBlock {
   @Prop() citation: string;
   @Prop() locator: string;
   @Prop() label: string = '';
-  @Prop() type: string = 'default'; // default, inline, locator
+  @Prop() type: string = 'default'; // default, locator
 
   render() {
     if (this.type == 'default') {

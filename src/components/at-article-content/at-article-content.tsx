@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'at-article-content',
@@ -6,15 +6,11 @@ import { Component, Prop } from '@stencil/core';
 })
 export class AtArticleContent {
 
-  // Indicate that name should be a public property on the component
-  @Prop() class: string = 'at-article-content';
-  @Prop() id: string = 'at-article-content';
-
   square() {
-    var last = document.querySelector('at-article-content div').lastElementChild as Element;
+    var last = document.querySelector('at-article-content').lastElementChild as Element;
     var e = document.createElement('span');
     e.setAttribute('class', 'at-article-content-end');
-    e.innerHTML = ' ◼';
+    e.innerHTML = '&nbsp;◼';
     last.insertAdjacentElement('beforeend', e);
   }
   componentDidLoad() {
@@ -23,7 +19,7 @@ export class AtArticleContent {
 
   render() {
     return (
-      <div id={this.id} class={this.class}>
+      <div class="at-article-content">
       <slot></slot>
       </div>
     );

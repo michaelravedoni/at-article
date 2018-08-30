@@ -4,7 +4,7 @@ import { Component, Prop } from '@stencil/core';
   tag: 'at-figure',
   styleUrl: 'at-figure.scss'
 })
-export class AtImage {
+export class AtFigure {
 
   // Indicate that name should be a public property on the component
   @Prop() src: string;

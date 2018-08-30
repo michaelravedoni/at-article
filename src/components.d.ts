@@ -65,8 +65,7 @@ declare global {
 
   namespace StencilComponents {
     interface AtArticleContent {
-      'class': string;
-      'id': string;
+
     }
   }
 
@@ -89,8 +88,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AtArticleContentAttributes extends HTMLAttributes {
-      'class'?: string;
-      'id'?: string;
+
     }
   }
 }
@@ -140,7 +138,6 @@ declare global {
   namespace StencilComponents {
     interface AtBlock {
       'caption': boolean;
-      'captionHeading': string;
       'heading': string;
       'type': string;
     }
@@ -166,7 +163,6 @@ declare global {
   namespace JSXElements {
     export interface AtBlockAttributes extends HTMLAttributes {
       'caption'?: boolean;
-      'captionHeading'?: string;
       'heading'?: string;
       'type'?: string;
     }

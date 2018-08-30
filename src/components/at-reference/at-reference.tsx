@@ -9,7 +9,7 @@ export class AtReference {
   @Element() atReferenceEl: HTMLElement;
 
   // Indicate that name should be a public property on the component
-  @Prop() type: string = 'default'; // default, inline, author-date, a-d, bibliography
+  @Prop() type: string = 'default'; // default, inline, a-d, bibliography
   @Prop() key: string;
   @Prop() creator: string;
   @Prop() creatorSummary: string;
@@ -88,7 +88,7 @@ export class AtReference {
         </span>
       );
     }
-    else if (this.type == 'author-date' || this.type == 'a-d') {
+    else if (this.type == 'a-d') {
       return (
         <span class="at-reference at-reference-a-d at-reference-is-referenced" data-at-ref-key={this.refKey}>
         (<a>{this.creator ? (this.creator.split(' ').slice(-1).join(' ') + ' ') : null}&#160;{this.date ? new Date(this.date).getFullYear() + '' : null}</a>)

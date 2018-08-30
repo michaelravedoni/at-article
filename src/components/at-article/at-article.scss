@@ -38,13 +38,15 @@ $article-max-width:               640px !default;
  ========================================================================== */
  at-article {
    article {
+     background-color: $global-background;
+   }
+   .at-article-container {
      max-width: $article-max-width;
      margin-left: auto;
      margin-right: auto;
-     background-color: $global-background;
    }
    @media only screen and (max-width: $article-max-width + 40px) {
-     article {
+     .at-article-container {
        margin-left: 1em;
        margin-right: 1em;
      }

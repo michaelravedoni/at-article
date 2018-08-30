@@ -1,0 +1,49 @@
+/*
+* # at-article theme-classic variables
+* https://github.com/michaelravedoni/at-article
+* https://michaelravedoni.github.io/at-article/
+*
+* Released under the MIT license
+* http://opensource.org/licenses/MIT
+*
+*/
+
+// Fonts
+// ========================================================================
+//@import url('https://fonts.googleapis.com/css?family=Quattrocento|Quattrocento+Sans:400,400i,700,700i');
+
+// Variables selector
+// ========================================================================
+$global-name: at-article;
+
+// Typography
+// ========================================================================
+
+$global-font-family:                             'Open Sans', "Helvetica Neue", Arial, sans-serif;
+$global-font-family-heading:                     'Montserrat', sans-serif;
+$global-font-size:                               18px;
+$global-line-height:                             1.618;
+
+// Colors
+// ========================================================================
+
+$global-primary-color:                           #54BC4B !default;
+$global-secondary-color:                         #F0506E !default;
+$global-tertiary-color:                          #adadad;
+$global-quaterly-color:                          #3F88C5;
+$global-muted-color:                             #D5DBDB !default;
+
+$global-background:                              #222222;
+$global-font-color:                              #f8f8f8;
+$global-heading-color:                           #f8f8f8;
+$global-emphasis-color:                          $global-secondary-color !default;
+
+$global-link-color:                              lighten($global-quaterly-color, 8%);
+$global-link-hover-color:                        lighten($global-link-color, 8%);
+
+// Breakpoint
+// ========================================================================
+
+$global-breakpoint-large:                        1200px;
+$global-breakpoint-medium:                       960px;
+$global-breakpoint-small:                        300px;

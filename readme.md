@@ -1,12 +1,12 @@
 <h1 align="center">at-article</h1> <br>
 <p align="center">
-    <img alt="at-article logo" title="at-article logo" src="docs/at-article.gif" width="450">
+    <img alt="at-article logo" title="at-article logo" src="docs/logo-at-article.png" width="300">
 </p>
 <div align="center">
   <strong>Write clean and flat articles</strong>
 </div>
 <div align="center">
-  Web Component collection using [Stencil](https://github.com/ionic-team/stencil) for writing blogs and academics web articles.
+  Web Component collection using <a href="https://github.com/ionic-team/stencil">Stencil</a> for writing blogs and academics web articles.
 </div>
 
 <div align="center">
@@ -53,6 +53,8 @@
 - 12 web-components for web native article writing
 - usable in any web environment
 - clean and flat design
+
+<div align="center"><img alt="at-article logo" title="at-article animation" src="docs/at-article.gif" width="450"></div>
 
 ## Install
 

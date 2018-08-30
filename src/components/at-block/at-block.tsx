@@ -8,7 +8,6 @@ export class AtBlock {
 
   // Indicate that name should be a public property on the component
   @Prop() caption: boolean;
-  @Prop() captionHeading: string;
   @Prop() heading: string;
   @Prop() type: string = 'default'; // default, info, example, warning, definition, fact
 

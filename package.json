@@ -1,16 +1,16 @@
 {
   "name": "at-article",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Web components and layout for blog and academic articles",
-  "author": "Ionic Team",
+  "author": "Michael Ravedoni",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/michaelravedoni/at-article/issues"
   },
-  "homepage": "https://github.com/ionic-team/stencil",
+  "homepage": "https://github.com/michaelravedoni/at-article",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/michaelravedoni/at-article.git"
   },
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
@@ -23,11 +23,11 @@
     "dev": "npm run start",
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
-    "test": "jest",
-    "test.watch": "jest --watch",
-    "release": "npm run build && npm publish",
-    "release-dry": "release-it --dry-run --verbose",
-    "doc": "bundle exec jekyll serve"
+    "doc": "cd docs && bundle exec jekyll serve",
+    "test": "jest --no-cache",
+    "test.watch": "jest --watch --no-cache",
+    "publish": "npm run build && npm publish",
+    "release-it-dry": "release-it --dry-run --verbose"
   },
   "dependencies": {
     "anchor-js": "^4.1.1",

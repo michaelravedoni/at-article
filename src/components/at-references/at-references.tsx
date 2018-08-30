@@ -55,7 +55,8 @@ export class AtReferences {
     for( i=0; i < referencesNodesList.length; i++ ) {
       let index = i+1;
       var data={};
-      for (var att, k = 0, atts = (referencesNodesList[0].parentNode  as HTMLElement).attributes, n = atts.length; k < n; k++){
+      var reEl = atts = referencesNodesList[i].parentNode as HTMLElement;
+      for (var att, k = 0, atts = reEl.attributes, n = atts.length; k < n; k++){
         att = atts[k];
         data[att.nodeName] = att.nodeValue;
       }
@@ -113,7 +114,7 @@ export class AtReferences {
           aCit.setAttribute('href', '#cite_ref-'+indexRef);
           idCit.setAttribute('id', 'cite_ref-'+keyCit +'-'+ cit);
 
-          //idCiteRef.setAttribute('data-citation-ref-'+cit, '#cite_ref-'+keyCit +'-'+ cit+1);
+          idCiteRef.setAttribute('data-citation-ref-'+cit, '#cite_ref-'+keyCit +'-'+ cit+1);
           idCiteRef.querySelector('.at-references-item-backlinks').insertAdjacentHTML('beforeend', '<a class="at-references-item-backlink" href="#cite_ref-'+keyCit +'-'+ cit+'">&#8593;</a>&#160;');
         }
       }

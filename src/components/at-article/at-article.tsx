@@ -15,9 +15,11 @@ export class AtArticle {
   render() {
     return (
       <article id={this.id} class={'at-article-theme-'+this.theme}>
-        {this.toc ? (<at-toc></at-toc>) : (null)}
-        {this.control ? (<at-control></at-control>) : (null)}
-        <slot></slot>
+        <div class="at-article-container">
+          {this.toc ? (<at-toc></at-toc>) : (null)}
+          {this.control ? (<at-control></at-control>) : (null)}
+          <slot></slot>
+        </div>
       </article>
     );
   }
