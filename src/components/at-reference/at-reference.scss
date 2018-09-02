@@ -151,18 +151,15 @@ at-reference {
    Reference wrapper type="default"
  ========================================================================== */
  at-reference {
-   .at-references-open::before {
-     content: "[";
+   .at-references-open {
      display: inline;
      color: $reference-delimiter-color;
    }
-   .at-references-close::before {
-     content: "]";
+   .at-references-close {
      display: inline;
      color: $reference-delimiter-color;
    }
-   .at-reference-delimiter::before {
-     content: "; ";
+   .at-reference-delimiter {
      display: inline;
      color: $reference-delimiter-color;
    }

@@ -11,7 +11,7 @@ import * as postComment from 'postcss-comment';
 export const config: Config = {
   namespace: 'at-article',
   bundles: [
-    {components: ['at-abstract', 'at-article', 'at-article-content', 'at-block', 'at-blockquote', 'at-callout', 'at-citation', 'at-control', 'at-figure', 'at-note', 'at-notes', 'at-reference', 'at-references', 'at-resume', 'at-summary', 'at-toc']}
+    {components: ['at-abstract', 'at-article', 'at-article-content', 'at-reference', 'at-block', 'at-blockquote', 'at-callout', 'at-citation', 'at-control', 'at-figure', 'at-note', 'at-notes', 'at-references', 'at-resume', 'at-summary', 'at-toc']}
   ],
   outputTargets:[
     {

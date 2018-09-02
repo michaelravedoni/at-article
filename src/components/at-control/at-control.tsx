@@ -12,7 +12,7 @@ export class AtControl {
   @State() lang: string = 'en';
 
   language() {
-    var lang = document.getElementsByTagName("html")[0].getAttribute("lang");
+    var lang = document.getElementsByTagName("html")[0].getAttribute("lang").slice(0, 1).toLowerCase();
     this.lang = lang;
     console.log(this.lang);
   }

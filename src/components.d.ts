@@ -285,6 +285,7 @@ declare global {
       'key'?: string;
       'label'?: string;
       'locator'?: string;
+      'onCitationRendered'?: (event: CustomEvent) => void;
       'pref'?: string;
       'suffix'?: string;
       'suppressAuthor'?: boolean;
@@ -510,6 +511,7 @@ declare global {
       'key'?: string;
       'language'?: string;
       'numPages'?: string;
+      'onReferenceRendered'?: (event: CustomEvent) => void;
       'pages'?: string;
       'parsedDate'?: string;
       'place'?: string;
@@ -530,7 +532,7 @@ declare global {
     interface AtReferences {
       'fullwidth': boolean;
       'heading': string;
-      'type': string;
+      'referencesFinded': boolean;
     }
   }
 
@@ -555,7 +557,7 @@ declare global {
     export interface AtReferencesAttributes extends HTMLAttributes {
       'fullwidth'?: boolean;
       'heading'?: string;
-      'type'?: string;
+      'referencesFinded'?: boolean;
     }
   }
 }

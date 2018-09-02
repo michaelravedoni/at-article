@@ -12,6 +12,10 @@ export class AtArticle {
   @Prop() toc: boolean = false;
   @Prop() control: boolean = false;
 
+  componentDidLoad() {
+    console.log('at-article did load');
+  }
+
   render() {
     return (
       <article id={this.id} class={'at-article-theme-'+this.theme}>

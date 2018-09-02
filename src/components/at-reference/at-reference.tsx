@@ -1,4 +1,4 @@
-import { Component, Prop, State, Element } from '@stencil/core';
+import { Component, Prop, State, Element, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'at-reference',
@@ -10,7 +10,7 @@ export class AtReference {
 
   // Indicate that name should be a public property on the component
   @Prop() type: string = 'default'; // default, inline, a-d, bibliography
-  @Prop() key: string;
+  @Prop({ mutable: true }) key: string;
   @Prop() creator: string;
   @Prop() creatorSummary: string;
   @Prop() parsedDate: string;
@@ -38,6 +38,13 @@ export class AtReference {
   @State() siblingNext:boolean;
   @State() siblingPrev:boolean;
 
+  @Event() referenceRendered: EventEmitter;
+
+  //@Watch('key')
+  //watchHandler(newValue: string, oldValue: string) {
+    //console.log('at-reference: The new value of key is: ', newValue, ' and old is: ', oldValue);
+  //}
+
   isNextSibling(element) {
       return ("nodeType" in element && element.nodeType === 1 && element.nextSibling !== null && element.nextSibling.nodeType === 1);
   }
@@ -47,21 +54,26 @@ export class AtReference {
   componentDidLoad() {
     this.siblingNext = this.isNextSibling(this.atReferenceEl);
     this.siblingPrev = this.isPrevSibling(this.atReferenceEl);
+    this.atReferenceEl.setAttribute('key', this.key);
+    this.referenceRendered.emit();
   }
 
   render() {
 
-    if (this.title || this.date) {this.refKey = this.title.slice(0, 3).toLowerCase() + this.creator.slice(0, 3).toLowerCase() + this.date.slice(2, 4);}
+    if ((this.title || this.date) && (this.key == undefined)) {
+      this.refKey = this.title.slice(0, 4).toLowerCase() + this.title.slice(-2).toLowerCase() + this.creator.slice(0, 4).toLowerCase() + this.date.slice(2, 4);
+      this.key = this.refKey;
+    }
 
     if(this.type == 'default'){
       return (
-        <span class="at-reference at-reference-default at-reference-is-referenced" data-at-ref-key={this.refKey}>
-          {this.siblingPrev == false && this.siblingNext == true ? (<span class="at-references-open"></span>): null}
-          {this.siblingPrev == false && this.siblingNext == false ? (<span class="at-references-open"></span>): null}
-          {this.siblingPrev == true ? (<span class="at-reference-delimiter"></span>): null}
-          <span class="at-reference-number"></span>
-          {this.siblingPrev == true && this.siblingNext == false ? (<span class="at-references-close"></span>): null}
-          {this.siblingPrev == false && this.siblingNext == false ? (<span class="at-references-close"></span>): null}
+        <span class="at-reference at-reference-default at-reference-is-referenced" data-at-ref-key={this.key}>
+          {this.siblingPrev == false && this.siblingNext == true ? (<span class="at-references-open">[</span>): null}
+          {this.siblingPrev == false && this.siblingNext == false ? (<span class="at-references-open">[</span>): null}
+          {this.siblingPrev == true ? (<span class="at-reference-delimiter">;&nbsp;</span>): null}
+          <span class="at-reference-number"><a>{this.key}</a></span>
+          {this.siblingPrev == true && this.siblingNext == false ? (<span class="at-references-close">]</span>): null}
+          {this.siblingPrev == false && this.siblingNext == false ? (<span class="at-references-close">]</span>): null}
         </span>
       );
     }
@@ -91,7 +103,7 @@ export class AtReference {
     else if (this.type == 'a-d') {
       return (
         <span class="at-reference at-reference-a-d at-reference-is-referenced" data-at-ref-key={this.refKey}>
-        (<a>{this.creator ? (this.creator.split(' ').slice(-1).join(' ') + ' ') : null}&#160;{this.date ? new Date(this.date).getFullYear() + '' : null}</a>)
+        (<a>{this.creator ? (this.creator.split(' ').slice(-1).join(' ') + '') : null}&#160;{this.date ? new Date(this.date).getFullYear() : null}</a>)
         </span>
       );
     }

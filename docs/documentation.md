@@ -50,7 +50,7 @@ It indicates the field of action of the main content of the article, its body, i
 ```
 
 ### Table of content (at-toc)
-This component is used to insert a table of content (TOC). The headings covered range from h2 to h6. The components use the [anchor-js](https://github.com/bryanbraun/anchorjs) and [tocbot](https://github.com/tscanlin/tocbot) libraries. It can be used as is, but it is recommended that you call it via the `at-article` component with `toc="true"`.
+This component is used to insert a table of content (TOC). The headings covered range from h2 to h6. The components use the [anchor-js](https://github.com/bryanbraun/anchorjs) and [tocbot](https://github.com/tscanlin/tocbot) libraries. It can be used as is, but it is recommended that you call it via the `at-article` component with `toc="true"`. The content of the toc is defined by the `js-at-toc-content`. Add it the the `at-article` container for example.
 
 **Markup**
 ```html
@@ -209,7 +209,7 @@ The reference inline-block allows the insertion of a reference that comes outsid
 <at-reference type="inline" title="Comment Je Vois le Monde" creator="Einstein Albert" date="2017" publisher="Flammarion" isbn="9782081404359" itemType="book"></at-reference>
 ```
 ```html
-<at-reference type="bibliography" title="La vérité sur l'affaire Harry Quebert" creator="Dicker, Joël" date="2014" publisher="De Fallois" isbn="9782877068635" itemType="book" url="https://example.com"></at-reference>
+<at-reference type="bibliography" title="La vérité sur l'affaire Harry Quebert" creator="Dicker, Joël" date="2014" publisher="De Fallois" isbn="9782877068635" itemType="book" url="https://example.com">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae ultricies ante, sit amet tincidunt dolor. Vestibulum eget odio vitae enim interdum commodo vel et mauris. Curabitur ullamcorper gravida leo feugiat tempor.</at-reference>
 ```
 
 Property | Default | Explanations

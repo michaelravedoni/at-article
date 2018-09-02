@@ -25,24 +25,35 @@ at-references {
     text-indent:-1.1em;
   }
   .at-references-item-index {display: none;}
-  .at-references-item-backlink {
-    text-decoration: none;
-    font-size: 85%;
-  }
   .at-references ol {
     list-style: decimal;
   }
 
+  /* Backlinks */
+  .at-references-item-backlink {
+    text-decoration: none;
+    font-size: 75%;
+    margin-right: .3em;
+    position: relative;
+    top: -2px;
+  }
+  .at-references-item-backlink-reference {
+    text-decoration: none;
+    vertical-align: text-bottom;
+    margin-right: .2em;
+  }
   .at-references-item-backlinks {
     counter-reset: backlinks;
+    margin-right: .2em;
   }
   .at-references-item-backlinks .at-references-item-backlink {
     display: inline;
-    font-size: 75%;
   }
   .at-references-item-backlinks .at-references-item-backlink:before {
     counter-increment: backlinks;
-    content: counter(backlinks, lower-alpha) "";
+    content: counter(backlinks, lower-alpha);
     margin-right: -1px;
+    position: relative;
+    top: 2px;
   }
 }

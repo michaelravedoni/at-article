@@ -1,4 +1,4 @@
-import { Component, Prop, State, Element } from '@stencil/core';
+import { Component, Prop, State, Element, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'at-citation',
@@ -20,6 +20,8 @@ export class AtCitation {
   @State() siblingNext:boolean;
   @State() siblingPrev:boolean;
 
+  @Event() citationRendered: EventEmitter;
+
   isNextSibling(element) {
       return ("nodeType" in element && element.nodeType === 1 && element.nextSibling !== null && element.nextSibling.nodeType === 1);
   }
@@ -29,6 +31,7 @@ export class AtCitation {
   componentDidLoad() {
     this.siblingNext = this.isNextSibling(this.atCitationEl);
     this.siblingPrev = this.isPrevSibling(this.atCitationEl);
+    this.citationRendered.emit();
   }
 
   render() {
