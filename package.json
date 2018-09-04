@@ -28,7 +28,8 @@
     "test.watch": "jest --watch --no-cache",
     "publish": "npm run build && npm publish",
     "release-it": "release-it --verbose --no-requireCleanWorkingDir",
-    "release-it-dry": "release-it --dry-run --verbose --no-requireCleanWorkingDir"
+    "release-it-dry": "release-it --dry-run --verbose --no-requireCleanWorkingDir",
+    "standard-version": "standard-version --dry-run"
   },
   "dependencies": {
     "anchor-js": "^4.1.1",
@@ -48,7 +49,8 @@
     "postcss-font-magician": "^2.2.1",
     "postcss-import": "^12.0.0",
     "precss": "^3.1.2",
-    "release-it": "^7.6.0"
+    "release-it": "^7.6.0",
+    "standard-version": "^4.4.0"
   },
   "jest": {
     "transform": {
@@ -62,5 +64,12 @@
       "json",
       "jsx"
     ]
+  },
+  "standard-version": {
+    "skip": {
+      "bump": true,
+      "commit": true,
+      "tag": true
+    }
   }
 }

@@ -46,7 +46,7 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/michaelravedoni/at-article/blob/master/LICENSE)
 [![npm](https://img.shields.io/npm/v/at-article.svg?style=flat-square)](https://www.npmjs.com/package/at-article)
 ![npm](https://img.shields.io/npm/dt/at-article.svg?style=flat-square)
-![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/at-article.svg?style=flat-square)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 ## Features
 
@@ -145,15 +145,7 @@ We’re really happy to accept contributions from the community, that’s the ma
 
 ## Release History
 
-## v0.0.3
-* Components <at-abstract> and <at-summary> added
-
-## v0.0.2
-* Hosted documentation
-* es5 polyfill
-
-## v0.0.1
-* Initial release
+You will find the releases history in the [release](https://github.com/michaelravedoni/at-article/releases) section. For more detail, you can check the [changelog.md](https://github.com/michaelravedoni/at-article/blob/master/CHANGELOG.md) file.
 
 ## Roadmap
 
