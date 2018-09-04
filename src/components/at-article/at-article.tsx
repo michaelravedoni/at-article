@@ -13,7 +13,7 @@ export class AtArticle {
   @Prop() control: boolean = false;
 
   componentDidLoad() {
-    console.log('at-article did load');
+    //console.log('at-article did load');
   }
 
   render() {

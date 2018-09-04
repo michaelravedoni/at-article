@@ -17,13 +17,10 @@ export class AtReferences {
   @State() references: any[] = [];
   @State() citations: Array<any> = [];
 
-  referencesFind() {
-    this.references = [];
-    this.referencesFinded = false;
-  }
+  // Update the references list. Create an aray of all <at-reference> tags presents in the document.
   referencesUpdate(e) {
-    console.log("this.referencesUpdate() start");
-    console.log(e);
+    //console.log("this.referencesUpdate() start");
+    //console.log(e);
     var referencesNodesList = document.querySelectorAll('at-reference:not([type="inline"]):not([type="bibliography"]):not([type="references"])');
     let referencesList = [];
     for ( var step = 0; step < referencesNodesList.length; step++ ) {
@@ -38,13 +35,13 @@ export class AtReferences {
     }
     this.references = referencesList;
 
-    console.log(this.references);
-    console.log("this.referencesUpdate() finished");
-    //this.el.forceUpdate();
+    //console.log(this.references);
+    //console.log("this.referencesUpdate() finished");
   }
 
+  // From the references array, transform the <at-reference> component with a link in the <at-references> section
   referencesMake() {
-    console.log("this.referencesMake() start");
+    //console.log("this.referencesMake() start");
     var refslist = this.references;
     for ( var step = 0; step < refslist.length; step++ ) {
       var refIndex = step+1;
@@ -66,11 +63,13 @@ export class AtReferences {
         }
       }
     }
-    console.log("this.referencesMake() finished");
+    //console.log("this.referencesMake() finished");
   }
+
+  // Find the citations <at-citation> tags. Create an aray of all <at-citation> tags presents in the document.
   citationsFind() {
     //To do: update on event https://auth0.com/blog/creating-web-components-with-stencil/
-    console.log("this.citationsFind() start");
+    //console.log("this.citationsFind() start");
     var citationsNodesList = document.querySelectorAll('at-citation');
     var citationsList = [];
     var j = 0;
@@ -84,12 +83,12 @@ export class AtReferences {
       citationsList = [...citationsList, {index: citIndex, key: citationsNodesList[j].getAttribute('key'), props: citProps, element: citationsNodesList[j]}]
     }
     this.citations = citationsList;
-
-    console.log(this.citations);
-    console.log("this.citationsFind() finished");
+    //console.log(this.citations);
+    //console.log("this.citationsFind() finished");
   }
+  // From the citations array, transform the <at-citation> component with a link in the <at-references> section
   citationsMake() {
-    console.log("this.citationsMake() start");
+    //console.log("this.citationsMake() start");
     for (var ref in this.references) {
       let indexRef = this.references[ref].index;
       let keyRef = this.references[ref].key;
@@ -129,8 +128,10 @@ export class AtReferences {
         }
       }
     }
-    console.log("this.citationsMake() finished");
+    //console.log("this.citationsMake() finished");
   }
+
+  //To do: add tooltip on the <at-reference> tag when displayed in the <at-references> section
   tooltip() {
     const tooltipNodesList = document.querySelectorAll('.at-reference-cite, .at-reference-a-d');
     let i = 0;
@@ -152,31 +153,25 @@ export class AtReferences {
 
   componentWillLoad() {
     this.citationsFind();
-    //this.referencesUpdate();
-    //document.addEventListener('referenceRendered', this.refresh);
     document.addEventListener('referenceRendered', this.referencesUpdate.bind(this), false);
     document.addEventListener('referenceRendered', this.referencesMake.bind(this), false);
     document.addEventListener('referenceRendered', this.citationsMake.bind(this), false);
     document.addEventListener('citationRendered', this.citationsMake.bind(this), false);
-    //document.addEventListener('articleRendered', this.referencesMake);
-    //document.addEventListener('articleRendered', this.citationsMake);
-    //document.addEventListener('articleRendered', this.tooltip);
-    //document.addEventListener('articleRendered', this.refresh);
-    console.log('at-references will render');
+    //console.log('at-references will render');
   }
   componentDidLoad() {
-    console.log('at-references has been rendered');
+    //console.log('at-references has been rendered');
   }
   componentWillUpdate() {
-    console.log('at-references will update and re-render');
+    //console.log('at-references will update and re-render');
   }
   componentDidUpdate() {
-    console.log('at-references did update');
+    //console.log('at-references did update');
   }
 
   render() {
     if (this.references.length > 0) {
-      console.log("at-references: render");
+      //console.log("at-references: render");
       return (
         <div id="at-references" class="at-references">
         <h2>{this.heading}</h2>

@@ -12,9 +12,9 @@ export class AtControl {
   @State() lang: string = 'en';
 
   language() {
-    var lang = document.getElementsByTagName("html")[0].getAttribute("lang").slice(0, 1).toLowerCase();
+    var lang = document.getElementsByTagName("html")[0].getAttribute("lang").slice(0, 2).toLowerCase().trim();
     this.lang = lang;
-    console.log(this.lang);
+    //console.log(this.lang);
   }
   increaseFont() {
     var root = document.getElementById('at-article');

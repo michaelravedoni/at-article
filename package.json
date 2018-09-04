@@ -1,6 +1,6 @@
 {
   "name": "at-article",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Web components and layout for blog and academic articles",
   "author": "Michael Ravedoni",
   "license": "MIT",
@@ -27,7 +27,8 @@
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
     "publish": "npm run build && npm publish",
-    "release-it-dry": "release-it --dry-run --verbose"
+    "release-it": "release-it --verbose --no-requireCleanWorkingDir",
+    "release-it-dry": "release-it --dry-run --verbose --no-requireCleanWorkingDir"
   },
   "dependencies": {
     "anchor-js": "^4.1.1",
