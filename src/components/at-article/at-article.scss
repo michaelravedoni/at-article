@@ -164,16 +164,16 @@ at-article {
   ========================================================================== */
   p {
     margin:0;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1em;
   }
   @media screen and (min-width: 37em) {
     p+p {
-      margin-top: -0.8rem;
+      /*margin-top: -0.8rem;
       text-indent: 32px;
-      text-indent: 1.618rem;
+      text-indent: 1.618rem;*/
     }
     p+p at-note {
-      text-indent: initial;
+      /*text-indent: initial;*/
     }
   }
 
