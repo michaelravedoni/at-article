@@ -51,6 +51,15 @@ export class AtReference {
   isPrevSibling(element) {
       return ("nodeType" in element && element.nodeType === 1 && element.previousSibling !== null && element.previousSibling.nodeType === 1);
   }
+  // From https://gist.github.com/mathewbyrne/1280286
+  slugify(text) {
+    return text.toString().toLowerCase()
+    .replace(/\s+/g, '-')           // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+    .replace(/^-+/, '')             // Trim - from start of text
+    .replace(/-+$/, '');            // Trim - from end of text
+  }
   componentDidLoad() {
     this.siblingNext = this.isNextSibling(this.atReferenceEl);
     this.siblingPrev = this.isPrevSibling(this.atReferenceEl);
@@ -59,9 +68,12 @@ export class AtReference {
   }
 
   render() {
-
-    if ((this.title || this.date) && (this.key == undefined)) {
-      this.refKey = this.title.slice(0, 4).toLowerCase() + this.title.slice(-2).toLowerCase() + this.creator.slice(0, 4).toLowerCase() + this.date.slice(2, 4);
+    if (this.key == undefined || this.key == '') {
+      let refKeyTitle = this.title ? this.slugify(this.title).slice(0, 4) : '';
+      let refKeyTitleEnd = this.title ? this.slugify(this.title).slice(-2) : '';
+      let refKeyCreator = this.creator ? this.slugify(this.creator).slice(0, 4) : '';
+      let refKeyDate = this.date ? this.date.slice(2, 4).toLowerCase() : '';
+      this.refKey = refKeyTitle + refKeyTitleEnd + refKeyCreator + refKeyDate;
       this.key = this.refKey;
     }
 
@@ -89,9 +101,10 @@ export class AtReference {
         {this.publisher ? this.publisher : null}
         {this.volume ? ', vol. ' + this.volume : null}
         {this.issue ? ', no. ' + this.issue : null}
-        {this.pages ? ', pp. ' + this.pages : null}
+        {this.pages ? ', p. ' + this.pages : null}
+        {this.numPages ? ', pp. ' + this.pages : null}
         {this.chapter ? ', chap. ' + this.chapter : null}
-        {this.publisher || this.volume || this.chapter|| this.pages ? '. ' : null}
+        {this.publisher || this.volume || this.chapter || this.pages || this.numPages ? '. ' : null}
 
         {this.isbn ? <small><a href={'https://en.wikipedia.org/wiki/Special:BookSources/'+this.isbn} title={'Resolve this ISBN: '+this.isbn} rel="noopener noreferrer" target="_blank"><span class="nowrap" itemprop="isbn">{this.isbn}</span></a></small> : null}
         {this.issn ? <small class="at-reference-issn">&#160;<a href="https://fr.wikipedia.org/wiki/International_Standard_Serial_Number" title="International Standard Serial Number" rel="noopener noreferrer" target="_blank">ISSN</a>:<a href={'http://worldcat.org/issn/'+this.issn+'&amp;lang=fr'} target="_blank"><span class="nowrap">{this.issn}</span></a></small> : null}
@@ -118,9 +131,10 @@ export class AtReference {
         {this.publisher ? this.publisher : null}
         {this.volume ? ', vol. ' + this.volume : null}
         {this.issue ? ', no. ' + this.issue : null}
-        {this.pages ? ', pp. ' + this.pages : null}
+        {this.pages ? ', p. ' + this.pages : null}
+        {this.numPages ? ', pp. ' + this.pages : null}
         {this.chapter ? ', chap. ' + this.chapter : null}
-        {this.publisher || this.volume || this.chapter|| this.pages ? '. ' : null}
+        {this.publisher || this.volume || this.chapter || this.pages || this.numPages ? '. ' : null}
 
         {this.isbn ? <small><a href={'https://en.wikipedia.org/wiki/Special:BookSources/'+this.isbn} title={'Resolve this ISBN: '+this.isbn} rel="noopener noreferrer" target="_blank"><span class="nowrap" itemprop="isbn">{this.isbn}</span></a></small> : null}
         {this.issn ? <small class="at-reference-issn">&#160;<a href="https://fr.wikipedia.org/wiki/International_Standard_Serial_Number" title="International Standard Serial Number" rel="noopener noreferrer" target="_blank">ISSN</a>:<a href={'http://worldcat.org/issn/'+this.issn+'&amp;lang=fr'} target="_blank"><span class="nowrap">{this.issn}</span></a></small> : null}
@@ -129,7 +143,7 @@ export class AtReference {
 
         <span class="at-reference-links">
           {this.url ? <span class="at-reference-read-online" itemprop="url"><a title="View reference" href={this.url} target="_blank">Read&nbsp;&#8594;</a></span> : null}
-          {this.title && this.itemType != 'webpage' ? <span class="at-reference-gs"><a title="Search in Google Scholar" href={'https://scholar.google.com/scholar?q='+this.title} target="_blank">GS&nbsp;&#8594;</a></span> : null}
+          {this.title && (this.itemType == 'book' || this.itemType == 'journalArticle') ? <span class="at-reference-gs"><a title="Search in Google Scholar" href={'https://scholar.google.com/scholar?q='+this.title} target="_blank">GS&nbsp;&#8594;</a></span> : null}
         </span>
 
         </span>
@@ -146,9 +160,10 @@ export class AtReference {
           {this.publisher ? <span itemprop="publisher">{this.publisher}</span>  : null}
           {this.volume ? ', vol. ' + this.volume : null}
           {this.issue ? ', no. ' + this.issue : null}
-          {this.pages ? ', pp. ' + this.pages : null}
+          {this.pages ? ', p. ' + this.pages : null}
+          {this.numPages ? ', pp. ' + this.pages : null}
           {this.chapter ? ', chap. ' + this.chapter : null}
-          {this.publisher || this.volume || this.chapter|| this.pages ? '. ' : null}
+          {this.publisher || this.volume || this.chapter || this.pages || this.numPages ? '. ' : null}
 
           {this.isbn ? <small><a href={'https://en.wikipedia.org/wiki/Special:BookSources/'+this.isbn} title={'Resolve this ISBN: '+this.isbn} rel="noopener noreferrer"><span class="nowrap" itemprop="isbn">{this.isbn}</span></a></small> : null}
           {this.issn ? <small class="at-reference-issn">&#160;<span title="International Standard Serial Number">ISSN</span>:<a href={'http://worldcat.org/issn/'+this.issn+'&amp;lang=fr'}><span class="nowrap">{this.issn}</span></a></small> : null}

@@ -43,10 +43,10 @@
 - [Authors and acknowledgment](#authors-and-acknowledgment)
 
 ## Introduction
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/michaelravedoni/at-article/blob/master/LICENSE)
 [![npm](https://img.shields.io/npm/v/at-article.svg?style=flat-square)](https://www.npmjs.com/package/at-article)
 ![npm](https://img.shields.io/npm/dt/at-article.svg?style=flat-square)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=flat-square)](https://conventionalcommits.org)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/michaelravedoni/at-article/blob/master/LICENSE)
 
 ## Features
 
