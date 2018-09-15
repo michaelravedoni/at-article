@@ -7,11 +7,19 @@ import { Component } from '@stencil/core';
 export class AtArticleContent {
 
   square() {
-    var last = document.querySelector('at-article-content').lastElementChild as Element;
+    var content = document.querySelector('.at-article-content');
+    var lastParagraph = document.querySelector('.at-article-content p:last-child');
+    var last = content.lastElementChild;
     var e = document.createElement('span');
     e.setAttribute('class', 'at-article-content-end');
     e.innerHTML = '&nbsp;◼';
-    last.insertAdjacentElement('beforeend', e);
+    if (last.tagName == 'P') {
+      console.log(last);
+      last.insertAdjacentElement('beforeend', e);
+    }
+    else {
+      content.appendChild(e);
+    }
   }
   componentDidLoad() {
     this.square()

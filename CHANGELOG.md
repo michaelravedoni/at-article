@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - style: Paragraph margin and indentation correction ([c93454c](https://github.com/michaelravedoni/at-article/commit/c93454c))
 - fix: at-reference key generation for all ([cdf90b6](https://github.com/michaelravedoni/at-article/commit/cdf90b6))
+- fix: at-article-content square inside paragraph ([08d3c9e](https://github.com/michaelravedoni/at-article/commit/08d3c9e))
 
 
 ## [1.0.2] - 2018-09-04
