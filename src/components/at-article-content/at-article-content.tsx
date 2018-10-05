@@ -14,7 +14,7 @@ export class AtArticleContent {
     e.setAttribute('class', 'at-article-content-end');
     e.innerHTML = '&nbsp;◼';
     if (last.tagName == 'P') {
-      console.log(last);
+      //console.log(last);
       last.insertAdjacentElement('beforeend', e);
     }
     else {
