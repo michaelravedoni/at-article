@@ -74,6 +74,8 @@ export class AtControl {
   setTheme() {
     var root = document.getElementById('at-article').parentElement;
     var currentTheme = root.getAttribute('theme');
+    if (currentTheme == null) {root.setAttribute('theme', 'default')}
+    var currentTheme = root.getAttribute('theme');
     var controlThemeContent = document.getElementsByClassName('at-control-dropdown-content-theme')[0];
     var currentItem = controlThemeContent.querySelector('#'+currentTheme);
     currentItem.classList.add('is-active');
