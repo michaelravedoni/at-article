@@ -1,6 +1,6 @@
 {
   "name": "at-article",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Web components and layout for blog and academic articles",
   "author": "Michael Ravedoni",
   "license": "MIT",
@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "npm run start",
     "build": "stencil build --prod",
-    "start": "stencil build --dev --watch --serve",
+    "start": "stencil build --dev --watch --serve --es5",
     "doc": "cd docs && bundle exec jekyll serve",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
