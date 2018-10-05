@@ -91,9 +91,7 @@ declare global {
     }
 
     interface AtNotes {
-      'fullwidth': boolean;
       'heading': string;
-      'type': string;
     }
 
     interface AtReference {
@@ -363,13 +361,12 @@ declare global {
     }
 
     export interface AtNoteAttributes extends HTMLAttributes {
+      'onNoteRendered'?: (event: CustomEvent) => void;
       'type'?: string;
     }
 
     export interface AtNotesAttributes extends HTMLAttributes {
-      'fullwidth'?: boolean;
       'heading'?: string;
-      'type'?: string;
     }
 
     export interface AtReferenceAttributes extends HTMLAttributes {

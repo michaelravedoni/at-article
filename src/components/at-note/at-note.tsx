@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'at-note',
@@ -10,6 +10,12 @@ export class AtNote {
   @Prop() type: string = 'default'; // inline, foot, aside
 
   @State() artificialId: string;
+
+  @Event() noteRendered: EventEmitter;
+
+  componentDidLoad() {
+    this.noteRendered.emit();
+  }
 
   idGenerator() {
       return 'note-' + Math.random().toString(36).substr(2, 16);

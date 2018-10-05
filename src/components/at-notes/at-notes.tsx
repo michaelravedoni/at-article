@@ -7,54 +7,52 @@ import { Component, Prop, State } from '@stencil/core';
 export class AtNotes {
 
   // Indicate that name should be a public property on the component
-  @Prop() fullwidth: boolean;
-  @Prop() type: string = 'default'; // default, foot, aside
   @Prop() heading: string = 'Notes';
 
-  @State() notes: Array<any> = [];
-  public notesList : Array<any> = [];
+  @State() notes: any[] = [];
 
 
-  cite() {
+  notesFind() {
     // Fetch all default and foot note type.
     // Create a note object list
     var notesNodesList = document.querySelectorAll('at-note .at-note-default, at-note .at-note-foot');
-    let i = 0;
-    for( i=0; i < notesNodesList.length; i++ ) {
-      this.notesList.push({index:i+1, content:notesNodesList[i].innerHTML, type: notesNodesList[i].parentElement.getAttribute('type')});
+    let notesList = [];
+    for ( var step = 0; step < notesNodesList.length; step++ ) {
+      var noteIndex = step+1;
+      //notesList.push({index:citIndex, content:notesNodesList[i].innerHTML, type: notesNodesList[i].parentElement.getAttribute('type')});
+      notesList = [...notesList, {index: noteIndex, type: notesNodesList[step].getAttribute('type'), content: notesNodesList[step].innerHTML, element: notesNodesList[step] }]
     }
-    this.notes = this.notesList;
+    this.notes = notesList;
+  }
 
+  notesMake() {
     // Add an id on all default and foot note type.
     // So we can link it with the footnotes section
-    for( i=0; i < notesNodesList.length; i++ ) {
-      let parent = notesNodesList[i].parentElement;
-      let index = i+1;
-      parent.querySelector('.at-note-number').setAttribute('id', 'cite_note_ref-'+index);
-      //console.log(parent.querySelector('.at-note-number'));
+    var noteslist = this.notes;
+    for ( var step = 0; step < noteslist.length; step++ ) {
+      let note = noteslist[step];
+      //console.log(note);
+      let parent = note.element.parentElement;
+      //console.log(parent);
+      let noteNumber = parent.querySelector('.at-note-number');
+      let noteIndex = step+1;
+      noteNumber.setAttribute('id', 'cite_note_ref-'+noteIndex);
       if (parent.hasAttribute('type')) {
-        parent.querySelector('.at-note-number').setAttribute('href', '#cite_note-'+index);
+        parent.querySelector('.at-note-number').setAttribute('href', '#cite_note-'+noteIndex);
       }
     }
-
-    /*
-    // Add a link and a id on all note type.
-    for( i=0; i < notesNodesList.length; i++ ) {
-      let span = document.createElement('span');
-      let index = i+1;
-      span.innerHTML = '[<a href="#cite_note-'+ index +'">'+ index +'</a>]';
-      span.className = 'at-note-cite';
-      span.setAttribute('id', 'cite_note_ref-'+index);
-      notesNodesList[i].parentNode.insertBefore(span, notesNodesList[i]);
-    }
-    */
+  }
+  componentWillLoad(){
+    this.notesFind();
+    document.addEventListener('noteRendered', this.notesFind.bind(this), false);
+    document.addEventListener('noteRendered', this.notesMake.bind(this), false);
   }
   componentDidLoad() {
-    this.cite();
+    //this.notesMake();
   }
 
   render() {
-    if(this.type == 'default' && this.notes.length > 0){
+    if(this.notes.length > 0){
       return (
         <div id="at-notes" class="at-notes">
         <h2>{this.heading}</h2>
