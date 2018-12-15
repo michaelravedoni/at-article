@@ -116,7 +116,7 @@ body {
  ========================================================================== */
 .at-note-number::after {
   counter-increment: at-note-number;
-  content: "" counter(at-note-number, lower-roman) "";
+  content: "" counter(at-note-number, lower-alpha) "";
   position: relative;
   vertical-align: baseline;
   font-size: 85%;
@@ -125,7 +125,7 @@ body {
 }
 .at-note-default::before {
   counter-increment: at-note-default;
-  content: "" counter(at-note-default, lower-roman) " ";
+  content: "" counter(at-note-default, lower-alpha) " ";
   position: relative;
   vertical-align: baseline;
   font-size: 85%;
