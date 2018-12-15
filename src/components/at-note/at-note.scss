@@ -101,3 +101,34 @@ Note + Block
     left: 2.5rem;
   }
 }
+
+/* ========================================================================
+Counter
+========================================================================== */
+
+/* Reset
+ ========================================================================== */
+body {
+  counter-reset: at-note-default at-note-number;
+}
+
+/* Increment
+ ========================================================================== */
+.at-note-number::after {
+  counter-increment: at-note-number;
+  content: "" counter(at-note-number, lower-roman) "";
+  position: relative;
+  vertical-align: baseline;
+  font-size: 85%;
+  top: -0.3rem;
+  left: 0rem;
+}
+.at-note-default::before {
+  counter-increment: at-note-default;
+  content: "" counter(at-note-default, lower-roman) " ";
+  position: relative;
+  vertical-align: baseline;
+  font-size: 85%;
+  top: -0.3rem;
+  left: 0rem;
+}

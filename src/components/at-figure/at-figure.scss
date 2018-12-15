@@ -61,3 +61,20 @@ at-figure {
   }
   .at-figure-caption-doi, .at-figure-caption-credit {}
 }
+
+/* ========================================================================
+Counter
+========================================================================== */
+
+/* Reset
+ ========================================================================== */
+body {
+  counter-reset: at-figure;
+}
+
+/* Increment
+ ========================================================================== */
+.at-figure-caption-numbering::after {
+  counter-increment: at-figure;
+  content: " " counter(at-figure) ".";
+}
