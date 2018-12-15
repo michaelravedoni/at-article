@@ -45,19 +45,20 @@ export class AtReferences {
     var refslist = this.references;
     for ( var step = 0; step < refslist.length; step++ ) {
       var refIndex = step+1;
+      var refKey = refslist[step].key;
       var refType = refslist[step].props.type;
       if (refType == 'a-d') {
         var refNumber = refslist[step].element.querySelector('a');
         if (refNumber) {
-          refNumber.setAttribute('href', '#cite_ref-'+refIndex);
-          refNumber.setAttribute('id', 'cite_reference_ref-'+refIndex);
+          refNumber.setAttribute('href', '#cite_ref-'+refKey);
+          refNumber.setAttribute('id', 'cite_reference_ref-'+refKey);
         }
       } else {
         var refNumber = refslist[step].element.querySelector('a');
         //console.log(refNumber);
         if (refNumber) {
-          refNumber.setAttribute('href', '#cite_ref-'+refIndex);
-          refNumber.setAttribute('id', 'cite_reference_ref-'+refIndex);
+          refNumber.setAttribute('href', '#cite_ref-'+refKey);
+          refNumber.setAttribute('id', 'cite_reference_ref-'+refKey);
           refNumber.innerHTML = refIndex;
           refNumber.className = 'at-reference-cite';
         }
@@ -99,16 +100,16 @@ export class AtReferences {
         let numberCit = this.citations[cit].element.querySelector('.at-citation-number');
         let aCit = this.citations[cit].element.querySelector('.at-citation-content a');
         let idCit = this.citations[cit].element.querySelector('span');
-        //let idCiteRef = document.querySelector('at-references #cite_ref-'+indexRef);
+        //let idCiteRef = document.querySelector('at-references #cite_ref-'+keyRef);
         if (keyCit == keyRef) {
           //console.log("this.citationsMake(): match");
           //console.log(keyCit, keyRef);
           if (numberCit) {
             numberCit.innerHTML = indexRef;
-            aCit.setAttribute('href', '#cite_ref-'+indexRef);
+            aCit.setAttribute('href', '#cite_ref-'+keyCit);
             idCit.setAttribute('id', 'cite_ref-'+keyCit +'-'+ cit);
             // Fill the references aray with the citations related to the reference loop
-            this.references[ref].citations[i] = {...this.references[ref].citations[i], indexRef: indexRef, key: keyCit, id: 'cite_ref-'+keyCit +'-'+ cit, href: '#cite_ref-'+indexRef};
+            this.references[ref].citations[i] = {...this.references[ref].citations[i], indexRef: indexRef, key: keyCit, id: 'cite_ref-'+keyCit +'-'+ cit, href: '#cite_ref-'+keyCit};
             //this.references[ref].citations[i] = {indexRef: indexRef, key: keyCit, id: 'cite_ref-'+keyCit +'-'+ cit, href: '#cite_ref-'+indexRef};
             i = i+1;
 
@@ -177,14 +178,14 @@ export class AtReferences {
         <h2>{this.heading}</h2>
         <ol>
         {this.references.map((reference, i) => {
-          return (<li id={'cite_ref-'+reference.index} class="at-references-item">
+          return (<li id={'cite_ref-'+reference.key} class="at-references-item">
             <span class="at-references-item-index">R{reference.index}.</span>&#160;
               {this.references[i].citations.length > 0 ? (
                 <span class="at-references-item-backlinks">
-                  <a class="at-references-item-backlink at-references-item-backlinks-reference" href={'#cite_reference_ref-'+reference.index}>&#8593;</a>
+                  <a class="at-references-item-backlink at-references-item-backlinks-reference" href={'#cite_reference_ref-'+reference.key}>&#8593;</a>
                     {this.references[i].citations.map(cit => {return(<a class="at-references-item-backlink at-references-item-backlinks-citation" href={'#'+cit.id}>↑</a>)})}
                 </span>
-              ) : (<a class="at-references-item-backlink-reference" href={'#cite_reference_ref-'+reference.index}>↑</a> )}
+              ) : (<a class="at-references-item-backlink-reference" href={'#cite_reference_ref-'+reference.key}>↑</a> )}
             <at-reference type="references" key={reference.key} itemType={reference.props.itemType} title={reference.props.title} creator={reference.props.creator} date={reference.props.date} publisher={reference.props.publisher} place={reference.props.place} numPages={reference.props.numPages} volume={reference.props.volume} issue={reference.props.issue} pages={reference.props.pages} chapter={reference.props.chapter} language={reference.props.language} isbn={reference.props.isbn} doi={reference.props.doi} issn={reference.props.issn} pmid={reference.props.pmid} url={reference.props.url}></at-reference>
           </li>)
         }
