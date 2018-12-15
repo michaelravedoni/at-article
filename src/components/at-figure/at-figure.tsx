@@ -20,7 +20,7 @@ export class AtFigure {
   render() {
     return (
       <figure>
-        <a href={this.href ? this.href : '#modal-figure'}>
+        <a href={this.href ? this.href : '#0'}>
           <img src={this.src} alt={this.title} title={this.title} class={this.fullwidth ? 'at-figure-fullwidth' : 'at-figure-no-fullwidth'} />
         </a>
         <figcaption class="at-figure-caption">
