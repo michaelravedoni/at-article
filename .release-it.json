@@ -20,7 +20,7 @@
   },
   "npm": {
     "publish": true,
-    "publishPath": "dist",
+    "publishPath": "",
     "tag": "latest",
     "private": false
   },
